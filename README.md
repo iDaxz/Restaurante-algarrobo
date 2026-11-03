@@ -102,7 +102,7 @@ DESIGN.md, PRODUCT.md       Sistema visual y propósito del producto
 
 ## Despliegue
 
-En preparación (etapa 4): la web en Vercel, la API en Render (Docker) y PostgreSQL en Neon. Vercel reenvía `/api` a Render, así el navegador ve un solo dominio y la sesión y la protección CSRF funcionan sin cambios.
+La web en Vercel, la API en Render (Docker) y PostgreSQL en Neon. Pasos en `docs/despliegue.md`. Vercel reenvía `/api` a Render, así el navegador ve un solo dominio y la sesión y la protección CSRF funcionan sin cambios.
 
 ## Créditos
 

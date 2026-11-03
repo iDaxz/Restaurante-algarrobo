@@ -1,0 +1,53 @@
+/* ---------- Portada: ventana al norte ----------
+   Paisajes a pantalla completa que se funden uno en otro con un acercamiento lento (js/ui/portada.js),
+   un velo carbón para leer el titular y, al pie, el lugar, el progreso de cada foto y la pausa. */
+.portada { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: flex-end; min-height: clamp(36rem, calc(100svh - 6.5rem), 54rem); overflow: hidden; background: var(--color-carbon); color: var(--color-marfil); }
+.portada-fotos, .portada-foto { position: absolute; inset: 0; }
+.portada-fotos { z-index: -2; }
+.portada-foto { margin: 0; opacity: 0; transition: opacity 1400ms ease; }
+.portada-foto.activa { opacity: 1; }
+.portada-foto img { display: block; width: 100%; height: 100%; object-fit: cover; transform-origin: var(--origen, 50% 50%); }
+@media (prefers-reduced-motion: no-preference) {
+  .portada-foto.activa img, .portada-foto.saliendo img { animation: acercar 9s linear both; }
+  .portada.en-pausa .portada-foto img { animation-play-state: paused; }
+}
+@keyframes acercar { from { transform: scale(1.02); } to { transform: scale(1.14); } }
+.portada-velo { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(33 30 26 / 0.88) 0%, rgb(33 30 26 / 0.6) 42%, rgb(33 30 26 / 0.12) 78%), linear-gradient(0deg, rgb(33 30 26 / 0.85), rgb(33 30 26 / 0) 38%); }
+@media (max-width: 767px) { .portada-velo { background: linear-gradient(0deg, rgb(33 30 26 / 0.94) 15%, rgb(33 30 26 / 0.62) 60%, rgb(33 30 26 / 0.4)); } }
+.portada-contenido { position: relative; width: 100%; padding-top: 4rem; padding-bottom: 2.5rem; }
+.portada-texto { max-width: 41rem; }
+.portada-marca { width: 3.25rem; height: 3.25rem; }
+.portada-titulo { margin-top: 1.25rem; font-size: clamp(2.6rem, 6vw, 5.2rem); line-height: 0.98; color: var(--color-blanco); text-wrap: balance; }
+.portada-propuesta { margin-top: 1.25rem; max-width: 33rem; font-size: 1.1rem; line-height: 1.6; color: rgb(246 231 207 / 0.9); }
+.portada-horario { margin-top: 1.5rem; font-size: 0.95rem; font-weight: 700; color: var(--color-marfil); }
+.portada-horario span { margin-inline: 0.35rem; color: var(--color-maiz); }
+.portada-pie { position: relative; width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1.5rem; padding-bottom: 1.5rem; }
+.portada-lugar { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 700; color: var(--color-marfil); }
+.portada-lugar svg { width: 1.1rem; height: 1.1rem; flex: none; color: var(--color-maiz); }
+.portada-control { display: flex; align-items: center; gap: 0.75rem; }
+.portada-progreso { display: flex; gap: 0.35rem; }
+/* Cada paso es un botón alto (44 px) aunque la barra visible sea fina */
+.portada-paso { display: grid; align-items: center; width: 2.4rem; height: 2.75rem; cursor: pointer; }
+.portada-barra { display: block; height: 3px; overflow: hidden; border-radius: 3px; background: rgb(246 231 207 / 0.32); transition: height 160ms; }
+.portada-barra > span { display: block; height: 100%; background: var(--color-maiz); transform-origin: left; transform: scaleX(var(--p, 0)); }
+.portada-paso:hover .portada-barra { height: 5px; }
+.portada-paso:focus-visible { outline: 3px solid var(--color-maiz); outline-offset: 2px; border-radius: 4px; }
+.portada-pausa { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; flex: none; border-radius: 999px; border: 2px solid rgb(246 231 207 / 0.45); color: var(--color-marfil); transition: border-color 160ms, background-color 160ms; }
+.portada-pausa:hover { border-color: var(--color-marfil); background: rgb(246 231 207 / 0.1); }
+.portada-pausa:focus-visible { outline: 3px solid var(--color-maiz); outline-offset: 2px; }
+.portada-pausa svg { width: 1.05rem; height: 1.05rem; }
+.portada-pausa .icono-seguir, .portada-pausa[aria-pressed="true"] .icono-pausa { display: none; }
+.portada-pausa[aria-pressed="true"] .icono-seguir { display: block; }
+
+/* ---------- Rieles: dos filas de palabras gigantes que se deslizan en sentidos opuestos al bajar ----------
+   Arriba los platos (con su foto), abajo las frases de la casa con el emblema; js/ui/portada.js las mueve
+   según el scroll, con un poco de inercia. Con movimiento reducido quedan quietas. */
+.rieles { display: grid; gap: 0.6rem; padding-block: clamp(2.25rem, 5vw, 3.75rem); overflow-x: clip; background: var(--color-marfil); color: var(--color-carbon); border-bottom: 1px solid var(--color-borde); }
+.riel-pista { display: flex; width: max-content; will-change: transform; }
+.riel-grupo { display: flex; align-items: center; gap: clamp(0.9rem, 2vw, 1.6rem); padding-right: clamp(0.9rem, 2vw, 1.6rem); white-space: nowrap; font-size: clamp(2.6rem, 7.5vw, 6.25rem); line-height: 1.05; }
+.riel-palabra { font-family: var(--font-display); letter-spacing: -0.01em; }
+.riel-palabra.lleno { color: var(--color-carbon); }
+.riel-palabra.aji { color: var(--color-aji); }
+.riel-palabra.dorado { color: var(--color-maiz-hondo); }
+.riel-foto img { display: block; width: 0.95em; height: 0.95em; border-radius: 999px; object-fit: cover; border: 3px solid var(--color-blanco); box-shadow: 0 6px 14px -6px rgb(33 30 26 / 0.45); }
+.riel-marca svg { display: block; width: 0.6em; height: 0.6em; }

@@ -1,0 +1,5 @@
+# Los scripts que corren en Linux (Docker, Render) necesitan finales de línea LF.
+* text=auto
+backend/mvnw text eol=lf
+*.sh text eol=lf
+*.cmd text eol=crlf

@@ -1,0 +1,48 @@
+      <!-- PORTADA: el plato que sale como el sol. Todo centrado sobre marfil; abajo, el plato de la casa
+           asoma por la mitad con un anillo de nombres de platos, y ambos giran al bajar (js/ui/portada.js). -->
+      <section id="inicio" aria-labelledby="titulo-inicio" class="sol" data-sol>
+        <div class="sol-texto mx-auto max-w-7xl px-4 sm:px-8">
+          <p class="estado-local sol-estado" data-estado-local data-inicio-datos>
+            <span class="punto-estado" aria-hidden="true"></span>
+            <span data-estado-local-texto>Barranco, Lima</span>
+          </p>
+          <h1 id="titulo-inicio" data-titular class="display sol-titulo">
+            <span class="block">El sabor del norte peruano,</span>
+            <span class="block text-aji">a fuego de leña</span>
+          </h1>
+          <p class="sol-propuesta" data-inicio-datos>
+            Cabrito a la norteña, arroz con pato a la chiclayana y ceviche de mero con ají limo. Recetas de Lambayeque y Piura, en Barranco.
+          </p>
+          <div class="sol-acciones" data-inicio-datos>
+            <a href="#reservas" class="btn btn-primario">
+              Reservar mesa
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+            <a href="#carta" class="btn btn-linea">Ver la carta</a>
+          </div>
+          <p class="sol-horario" data-inicio-datos>
+            Almuerzo 12:00–16:30 <span aria-hidden="true">·</span> Cena 19:00–23:00 <span aria-hidden="true">·</span> Lunes cerrado
+          </p>
+        </div>
+
+        <div class="sol-horizonte">
+          <div class="sol-astro">
+            <svg class="sol-anillo" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+              <defs><path id="sol-circulo" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0" /></defs>
+              <text><textPath href="#sol-circulo" textLength="552" lengthAdjust="spacing">SECO DE CABRITO · ARROZ CON PATO · CEVICHE · CAUSA LIMEÑA · KING KONG · CHICHA DE JORA ·</textPath></text>
+            </svg>
+            <div class="sol-plato">
+              <img
+                src="assets/img/portada/l/seco-de-cabrito-chiclayo.webp"
+                srcset="assets/img/portada/m/seco-de-cabrito-chiclayo.webp 640w, assets/img/portada/l/seco-de-cabrito-chiclayo.webp 1280w"
+                sizes="(min-width: 1024px) 40rem, 80vw"
+                width="1280"
+                height="1282"
+                alt="Seco de cabrito con frejoles, arroz y sarza de cebolla, visto desde arriba: el plato de la casa."
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+

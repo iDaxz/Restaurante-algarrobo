@@ -1,0 +1,76 @@
+/* ---------- Portada: mosaico de cuatro piezas ----------
+   El titular (marfil luz), el plato de la casa girando despacio (carbón), el estado de hoy en vivo
+   (blanco) y la carta en abanico (maíz). Las piezas entran escalonadas una sola vez. */
+.bento-portada { background: var(--color-marfil); }
+.bento { display: grid; gap: 0.85rem; }
+@media (min-width: 640px) {
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .bento-titular { grid-column: 1 / -1; }
+  .bento-plato { grid-row: span 2; }
+}
+@media (min-width: 1024px) {
+  .bento { grid-template-columns: 1.15fr 1fr 1.15fr; grid-template-rows: auto auto; }
+  .bento-titular { grid-column: 1 / 3; grid-row: 1; }
+  .bento-plato { grid-column: 3; grid-row: 1 / 3; }
+  .bento-hoy { grid-column: 1; grid-row: 2; }
+  .bento-carta { grid-column: 2; grid-row: 2; }
+}
+.bento-pieza { position: relative; overflow: hidden; border-radius: 28px; }
+@media (prefers-reduced-motion: no-preference) {
+  .js .bento-pieza { animation: pieza-llega 800ms var(--ease-salida) both; animation-delay: calc(80ms + var(--i, 0) * 110ms); }
+}
+@keyframes pieza-llega { from { opacity: 0; transform: translateY(18px) scale(0.97); } to { opacity: 1; transform: none; } }
+
+/* 1. Titular */
+.bento-titular { display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(1.5rem, 3vw, 2.5rem); background: var(--color-marfil-luz); border: 1px solid var(--color-borde); }
+.bento-marca { width: 2.6rem; height: 2.6rem; margin-bottom: auto; }
+.bento-titulo { margin-top: 1.25rem; font-size: clamp(2.4rem, 4.4vw, 3.9rem); line-height: 0.98; color: var(--color-carbon); text-wrap: balance; }
+.bento-propuesta { margin-top: 1.1rem; max-width: 34rem; font-size: 1.08rem; line-height: 1.6; color: var(--color-carbon-suave); text-wrap: pretty; }
+
+/* 2. El plato de la casa: visto desde arriba, gira despacio sobre la mesa */
+.bento-plato { display: grid; place-items: center; margin: 0; aspect-ratio: 1; background: radial-gradient(circle at 50% 45%, #3b3027, var(--color-carbon) 70%); }
+@media (min-width: 640px) { .bento-plato { aspect-ratio: auto; min-height: 22rem; } }
+.bento-plato-giro { width: min(88%, 30rem); aspect-ratio: 1; border-radius: 999px; overflow: hidden; box-shadow: 0 30px 50px -20px rgb(0 0 0 / 0.65), 0 0 0 8px rgb(246 231 207 / 0.06); transition: transform 600ms var(--ease-salida); }
+.bento-plato-giro img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); }
+@media (prefers-reduced-motion: no-preference) {
+  .bento-plato-giro img { animation: plato-gira 90s linear infinite; }
+  .bento-plato:hover .bento-plato-giro { transform: scale(1.04); }
+}
+@keyframes plato-gira { from { transform: scale(1.06) rotate(0deg); } to { transform: scale(1.06) rotate(360deg); } }
+.bento-plato-pie { position: absolute; left: 1rem; bottom: 1rem; display: grid; padding: 0.55rem 0.9rem; border-radius: 14px; background: rgb(251 243 230 / 0.94); color: var(--color-carbon); font-family: var(--font-display); font-size: 1.15rem; line-height: 1.1; box-shadow: 0 8px 20px -10px rgb(0 0 0 / 0.6); }
+.bento-plato-pie span { font-family: var(--font-sans); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-aji); }
+
+/* 3. Hoy: estado en vivo, horario y cómo llegar */
+.bento-hoy { display: flex; flex-direction: column; gap: 0.9rem; padding: 1.5rem; background: var(--color-blanco); border: 1px solid var(--color-borde); }
+.bento-estado { align-self: flex-start; padding: 0.4rem 0.8rem; border-radius: 999px; background: var(--color-marfil-luz); border: 1px solid var(--color-borde); font-size: 0.86rem; }
+.bento-hoy-titulo { font-size: clamp(1.4rem, 2.2vw, 1.75rem); line-height: 1.05; }
+.bento-horario { display: grid; gap: 0.35rem; font-size: 0.95rem; }
+.bento-horario div { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: 0.35rem; border-bottom: 1px dashed var(--color-borde); }
+.bento-horario dt { font-weight: 700; }
+.bento-horario dd { font-variant-numeric: tabular-nums; color: var(--color-carbon-suave); }
+.bento-enlace { margin-top: auto; display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 800; text-decoration: underline; text-decoration-color: var(--color-maiz); text-decoration-thickness: 3px; text-underline-offset: 5px; }
+.bento-enlace svg { width: 1rem; height: 1rem; transition: transform 200ms var(--ease-salida); }
+.bento-enlace:hover { color: var(--color-aji); }
+.bento-enlace:hover svg { transform: translateX(3px); }
+
+/* 4. La carta: un abanico de platos que se abre al pasar el cursor */
+.bento-carta { display: flex; flex-direction: column; justify-content: flex-end; min-height: 16rem; padding: 1.5rem; background: var(--color-maiz); color: var(--color-carbon); text-decoration: none; }
+.bento-carta:focus-visible { outline: 3px solid var(--color-carbon); outline-offset: 3px; }
+.bento-abanico { position: absolute; top: 1.5rem; right: 4.5rem; width: 6rem; height: 6rem; }
+.bento-abanico img { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 999px; object-fit: cover; border: 4px solid var(--color-blanco); box-shadow: 0 10px 20px -10px rgb(33 30 26 / 0.6); transform-origin: 50% 160%; transition: transform 550ms var(--ease-salida); }
+.bento-abanico img:nth-child(1) { transform: rotate(-12deg); }
+.bento-abanico img:nth-child(2) { transform: rotate(-6deg); }
+.bento-abanico img:nth-child(3) { transform: rotate(0deg); }
+.bento-abanico img:nth-child(4) { transform: rotate(6deg); }
+.bento-abanico img:nth-child(5) { transform: rotate(12deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .bento-carta:hover .bento-abanico img:nth-child(1), .bento-carta:focus-visible .bento-abanico img:nth-child(1) { transform: rotate(-30deg); }
+  .bento-carta:hover .bento-abanico img:nth-child(2), .bento-carta:focus-visible .bento-abanico img:nth-child(2) { transform: rotate(-15deg); }
+  .bento-carta:hover .bento-abanico img:nth-child(4), .bento-carta:focus-visible .bento-abanico img:nth-child(4) { transform: rotate(15deg); }
+  .bento-carta:hover .bento-abanico img:nth-child(5), .bento-carta:focus-visible .bento-abanico img:nth-child(5) { transform: rotate(30deg); }
+}
+.bento-carta-numero { font-size: clamp(3.5rem, 6vw, 5rem); line-height: 0.9; }
+.bento-carta-texto { margin-top: 0.4rem; max-width: 14rem; font-size: 1.02rem; font-weight: 700; line-height: 1.3; }
+.bento-carta-ir { margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 800; }
+.bento-carta-ir svg { width: 1rem; height: 1rem; transition: transform 200ms var(--ease-salida); }
+.bento-carta:hover .bento-carta-ir svg { transform: translateX(4px); }

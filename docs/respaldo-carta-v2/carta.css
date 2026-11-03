@@ -1,0 +1,143 @@
+/* ---------- Carta: pase de cocina (carta tipográfica + ventana con el plato en grande) ---------- */
+.carta-cabeza { display: grid; gap: 1.5rem; }
+@media (min-width: 1024px) { .carta-cabeza { grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 2.5rem; } }
+.carta-intro { margin-top: 0.75rem; max-width: 30rem; font-size: 1.05rem; color: var(--color-carbon-suave); }
+
+/* Filtro: control segmentado en una cápsula; en móvil se desliza de lado. */
+.filtros-carta { min-width: 0; margin-inline: -1rem; padding: 0.25rem 1rem; overflow-x: auto; scrollbar-width: none; overscroll-behavior-x: contain; }
+.filtros-carta::-webkit-scrollbar { display: none; }
+@media (min-width: 640px) { .filtros-carta { margin-inline: 0; padding-inline: 0; } }
+.filtros-carta-riel {
+  display: flex;
+  gap: 0.2rem;
+  width: max-content;
+  padding: 0.3rem;
+  border: 2px solid var(--color-carbon);
+  border-radius: 999px;
+  background: var(--color-blanco);
+}
+.pestana-carta {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  padding: 0.6rem 1.05rem;
+  border-radius: 999px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+  white-space: nowrap;
+  transition: background-color 200ms var(--ease-salida), color 200ms;
+}
+.pestana-carta:hover { background: var(--color-marfil); }
+.pestana-carta[aria-pressed="true"] { background: var(--color-carbon); color: var(--color-marfil); }
+.pestana-carta:focus-visible { outline: 3px solid var(--color-aji); outline-offset: 2px; }
+.pestana-carta-cuenta { font-size: 0.78rem; font-weight: 800; color: var(--color-aji); font-variant-numeric: tabular-nums; }
+.pestana-carta[aria-pressed="true"] .pestana-carta-cuenta { color: var(--color-maiz); }
+
+/* Un pase por categoría (postres y bebidas comparten uno) */
+.carta-pase { padding-top: 3.5rem; }
+@media (min-width: 1024px) { .carta-pase { padding-top: 5rem; } }
+.carta-pase.sobre-aji { margin-top: 4rem; padding-block: 3.5rem; }
+@media (min-width: 1024px) { .carta-pase.sobre-aji { margin-top: 5rem; padding-block: 5rem; } }
+.carta-pase.sobre-aji + .carta-pase { padding-top: 4rem; }
+.pase-grupo + .pase-grupo { margin-top: 3.5rem; }
+
+.pase-cabeza { padding-bottom: 1rem; border-bottom: 2px solid var(--color-carbon); }
+.pase-titulo { font-size: clamp(2.4rem, 4.5vw, 3.4rem); line-height: 1; color: var(--color-carbon); }
+.pase-intro { margin-top: 0.6rem; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.25rem 1.5rem; color: var(--color-carbon-suave); }
+.pase-cuenta { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-aji); }
+
+/* Filas: el nombre manda; precio a la derecha y origen debajo */
+.pase-fila {
+  display: grid;
+  grid-template-columns: 5.25rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgb(33 30 26 / 0.16);
+}
+.pase-foto { display: block; aspect-ratio: 1; border-radius: 12px; overflow: hidden; background: var(--color-piedra); }
+.pase-foto img { width: 100%; height: 100%; object-fit: cover; }
+.pase-linea { display: flex; align-items: baseline; gap: 1rem; }
+.pase-flecha { display: none; }
+.pase-nombre { flex: 1; min-width: 0; font-size: 1.4rem; line-height: 1.12; color: var(--color-carbon); transition: color 200ms, transform 320ms var(--ease-salida); }
+.pase-precio { font-size: 1.35rem; }
+.pase-meta { margin-top: 0.35rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 0.6rem; }
+.pase-origen { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-carbon-suave); }
+.pase-descripcion { margin-top: 0.45rem; font-size: 0.95rem; line-height: 1.5; color: var(--color-carbon-suave); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.precio-agotado { text-decoration: line-through; text-decoration-thickness: 2px; opacity: 0.7; }
+.agotado-hoy { padding: 0.15rem 0.5rem; border-radius: 6px; background: var(--color-carbon); color: var(--color-marfil); font-size: 0.74rem; font-weight: 800; }
+.pase-fila.agotado .pase-nombre { opacity: 0.55; }
+.pase-fila.agotado .pase-foto img { filter: grayscale(0.7); }
+
+/* Escritorio: sin fotos ni descripción en las filas; eso lo cuenta la ventana de cocina */
+@media (min-width: 1024px) {
+  .pase-fila { display: block; padding: 1.15rem 0; }
+  .pase-foto, .pase-descripcion { display: none; }
+  .pase-nombre { font-size: clamp(1.6rem, 2.3vw, 2.05rem); }
+  .pase-precio { font-size: 1.6rem; }
+  .pase-flecha {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 1.55rem;
+    color: var(--color-aji);
+    opacity: 0;
+    transform: translateX(-0.75rem);
+    transition: opacity 200ms, transform 320ms var(--ease-salida);
+  }
+  .pase-fila.en-pase .pase-flecha { opacity: 1; transform: none; }
+  .pase-fila.en-pase .pase-nombre { color: var(--color-aji); transform: translateX(2rem); }
+  .pase-fila.en-pase .pase-meta { transform: translateX(2rem); }
+  .pase-meta { transition: transform 320ms var(--ease-salida); }
+}
+
+/* La ventana de cocina: el plato que se mira, en grande */
+.ventana-cocina { display: grid; gap: 1.5rem; }
+.ventana-foto {
+  position: relative;
+  display: grid;
+  aspect-ratio: 4 / 5;
+  max-height: calc(100svh - 25rem); /* que la ficha completa quepa bajo la cabecera fija */
+  min-height: 16rem;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--color-piedra);
+  box-shadow: 0 30px 50px -28px rgb(33 30 26 / 0.6), 0 6px 14px -8px rgb(33 30 26 / 0.25);
+}
+.ventana-foto img {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 380ms var(--ease-salida), transform 700ms var(--ease-salida);
+}
+.ventana-foto img.entrando { opacity: 0; transform: scale(1.04); }
+.ventana-cocina.agotado .ventana-foto img { filter: grayscale(0.7); }
+.ventana-marcas { display: flex; flex-wrap: wrap; gap: 0.4rem; min-height: 1.6rem; }
+.ventana-marcas:empty { display: none; }
+.ventana-cuerpo { display: grid; gap: 0.45rem; }
+.ventana-linea { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.ventana-nombre { font-size: clamp(1.6rem, 2.2vw, 2rem); line-height: 1.08; color: var(--color-carbon); }
+.ventana-precio { font-size: 1.75rem; line-height: 1; color: var(--color-aji); white-space: nowrap; }
+.ventana-origen { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-carbon-suave); }
+.ventana-texto { font-size: 1rem; line-height: 1.55; color: var(--color-carbon-suave); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.ventana-historia { justify-self: start; margin-top: 0.35rem; display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.92rem; font-weight: 800; color: var(--color-aji); cursor: pointer; }
+.ventana-historia:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Sobre la banda ají (especialidades) */
+.sobre-aji .pase-cabeza { border-bottom-color: var(--color-marfil); }
+.sobre-aji .pase-titulo, .sobre-aji .pase-nombre, .sobre-aji .ventana-nombre { color: var(--color-blanco); }
+.sobre-aji .pase-intro, .sobre-aji .pase-origen, .sobre-aji .pase-descripcion,
+.sobre-aji .ventana-origen, .sobre-aji .ventana-texto { color: var(--color-marfil); }
+.sobre-aji .pase-cuenta, .sobre-aji .pase-precio, .sobre-aji .ventana-precio,
+.sobre-aji .ventana-historia, .sobre-aji .pase-flecha { color: var(--color-maiz); }
+.sobre-aji .pase-fila { border-bottom-color: rgb(246 231 207 / 0.25); }
+.sobre-aji .ventana-foto { box-shadow: 0 0 0 6px rgb(255 255 255 / 0.12), 0 30px 50px -24px rgb(0 0 0 / 0.55); }
+@media (min-width: 1024px) { .sobre-aji .pase-fila.en-pase .pase-nombre { color: var(--color-maiz); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ventana-foto img, .pase-nombre, .pase-meta, .pase-flecha, .pestana-carta { transition: none !important; }
+  .ventana-foto img.entrando { transform: none; }
+}

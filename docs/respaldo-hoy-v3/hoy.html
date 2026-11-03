@@ -1,0 +1,26 @@
+      <!-- HOY: la jornada como una línea (turnos y la hora de ahora) y los próximos días para reservar -->
+      <section aria-labelledby="titulo-hoy" class="jornada">
+        <div class="mx-auto max-w-7xl px-4 sm:px-8 py-14 lg:py-20" data-pizarra>
+          <div class="jornada-cabeza" data-revelar>
+            <h2 id="titulo-hoy" class="display jornada-titulo">
+              <span class="jornada-titulo-dia" data-pizarra-dia>Hoy</span>
+              <span class="jornada-titulo-fecha" data-pizarra-fecha></span>
+            </h2>
+            <div class="jornada-datos">
+              <p class="estado-local jornada-estado" data-estado-local>
+                <span class="punto-estado" aria-hidden="true"></span>
+                <span data-estado-local-texto>Revisando el horario</span>
+              </p>
+              <p class="jornada-nota" data-pizarra-nota></p>
+            </div>
+          </div>
+          <div class="jornada-dia" data-pizarra-turnos aria-live="polite" data-revelar>
+            <p class="cargando">Contando mesas</p>
+          </div>
+          <div class="jornada-semana" data-revelar>
+            <h3 class="jornada-semana-titulo">Los próximos días</h3>
+            <ol class="jornada-dias" data-pizarra-semana></ol>
+          </div>
+        </div>
+      </section>
+

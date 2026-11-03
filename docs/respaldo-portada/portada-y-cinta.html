@@ -1,0 +1,160 @@
+      <!-- PORTADA: la mesa servida. Platos norteños vistos desde arriba en los bordes y el titular al centro -->
+      <section
+        id="inicio"
+        aria-labelledby="titulo-inicio"
+        class="mesa relative overflow-hidden"
+      >
+        <div class="absolute inset-0" aria-hidden="true">
+          <div class="plato-mesa plato--1" style="--i: 0">
+            <img
+              src="assets/img/paisajes/m/pimentel.webp"
+              srcset="assets/img/paisajes/m/pimentel.webp 640w, assets/img/paisajes/pimentel.jpg 1280w"
+              sizes="(min-width: 1024px) 24vw, 40vw"
+              alt=""
+              style="object-position: 50% 55%"
+              loading="eager"
+            />
+          </div>
+          <div class="plato-mesa plato--2" style="--i: 1">
+            <img
+              src="assets/img/paisajes/m/huanchaco.webp"
+              srcset="assets/img/paisajes/m/huanchaco.webp 640w, assets/img/paisajes/huanchaco.jpg 1280w"
+              sizes="(min-width: 1024px) 24vw, 40vw"
+              alt=""
+              style="object-position: 68% 50%"
+              loading="eager"
+            />
+          </div>
+          <div class="plato-mesa plato--3" style="--i: 2">
+            <img
+              src="assets/img/paisajes/m/chan-chan.webp"
+              srcset="assets/img/paisajes/m/chan-chan.webp 640w, assets/img/paisajes/chan-chan.jpg 1280w"
+              sizes="(min-width: 1024px) 24vw, 40vw"
+              alt=""
+              style="object-position: 45% 50%"
+              loading="eager"
+            />
+          </div>
+          <div class="plato-mesa plato--4" style="--i: 3">
+            <img
+              src="assets/img/paisajes/m/tucume.webp"
+              srcset="assets/img/paisajes/m/tucume.webp 640w, assets/img/paisajes/tucume.jpg 1280w"
+              sizes="(min-width: 1024px) 24vw, 40vw"
+              alt=""
+              style="object-position: 50% 55%"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="plato-mesa plato--5" style="--i: 4">
+            <img
+              src="assets/img/paisajes/m/mancora.webp"
+              srcset="assets/img/paisajes/m/mancora.webp 640w, assets/img/paisajes/mancora.jpg 1280w"
+              sizes="(min-width: 1024px) 24vw, 40vw"
+              alt=""
+              style="object-position: 45% 60%"
+              loading="eager"
+            />
+          </div>
+          <div class="plato-mesa plato--6" style="--i: 5">
+            <img
+              src="assets/img/platos/m/bosque-de-pomac.webp"
+              srcset="assets/img/platos/m/bosque-de-pomac.webp 640w, assets/img/platos/bosque-de-pomac.jpg 1280w"
+              sizes="(min-width: 1024px) 24vw, 40vw"
+              alt=""
+              style="object-position: 50% 50%"
+              loading="eager"
+            />
+          </div>
+          <div class="plato-mesa plato--7" style="--i: 6">
+            <img
+              src="assets/img/paisajes/m/barranco.webp"
+              srcset="assets/img/paisajes/m/barranco.webp 640w, assets/img/paisajes/barranco.jpg 1280w"
+              sizes="(min-width: 1024px) 24vw, 40vw"
+              alt=""
+              style="object-position: 40% 50%"
+              loading="eager"
+            />
+          </div>
+        </div>
+
+        <div
+          class="relative z-10 mx-auto max-w-[44rem] px-6 py-24 sm:py-28 lg:py-32 text-center flex flex-col items-center"
+        >
+          <svg
+            class="w-14 h-14 sm:w-16 sm:h-16"
+            viewBox="0 0 40 40"
+            aria-hidden="true"
+          >
+            <use href="#marca" />
+          </svg>
+          <h1
+            id="titulo-inicio"
+            data-titular
+            class="mt-5 display text-[clamp(2.6rem,5.6vw,4.8rem)] leading-[1] text-carbon"
+          >
+            <span class="block">El sabor del norte peruano,</span>
+            <span class="block text-aji">a fuego de leña</span>
+          </h1>
+          <p
+            class="mt-5 max-w-[32rem] text-[1.1rem] leading-relaxed text-carbon-suave"
+            data-inicio-datos
+          >
+            Cabrito a la norteña, arroz con pato a la chiclayana y ceviche de
+            mero con ají limo. Recetas de Lambayeque y Piura, en Barranco.
+          </p>
+          <div
+            class="mt-7 flex flex-wrap justify-center gap-3"
+            data-inicio-datos
+          >
+            <a href="#reservas" class="btn btn-primario">
+              Reservar mesa
+              <svg
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a href="#carta" class="btn btn-linea">Ver la carta</a>
+          </div>
+          <p
+            class="mt-6 text-[0.95rem] font-semibold text-carbon"
+            data-inicio-datos
+          >
+            Almuerzo 12:00–16:30
+            <span class="mx-1.5 text-terracota" aria-hidden="true">·</span> Cena
+            19:00–23:00
+            <span class="mx-1.5 text-terracota" aria-hidden="true">·</span>
+            Lunes cerrado
+          </p>
+        </div>
+      </section>
+
+      <!-- CINTA: frases de la casa y platos en círculo, cruzando entre la portada y la carta (solo decorativa) -->
+      <div class="cinta" aria-hidden="true" data-cinta>
+        <div class="cinta-banda">
+          <div class="cinta-pista" data-cinta-pista>
+            <ul class="cinta-grupo">
+              <li class="display">A fuego de leña</li>
+              <li><img src="assets/img/platos/m/seco-de-cabrito.webp" alt="" loading="lazy" /></li>
+              <li class="display">Ají limo</li>
+              <li><img src="assets/img/platos/m/ceviche-de-mero.webp" alt="" loading="lazy" /></li>
+              <li class="display">Chicha de jora hecha en casa</li>
+              <li><img src="assets/img/platos/m/chicha-de-jora.webp" alt="" loading="lazy" /></li>
+              <li class="display">Recetas de Monsefú</li>
+              <li><img src="assets/img/platos/m/arroz-con-pato-plato.webp" alt="" loading="lazy" /></li>
+              <li class="display">Fuego lento</li>
+              <li><img src="assets/img/platos/m/espesado.webp" alt="" loading="lazy" /></li>
+              <li class="display">Lo que se acaba, se acaba</li>
+              <li><img src="assets/img/platos/m/king-kong.webp" alt="" loading="lazy" /></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+

@@ -1,0 +1,71 @@
+  /* Portada: la mesa servida. Superficie marfil con luz cálida al centro y platos en los bordes */
+  .mesa {
+    background:
+      radial-gradient(ellipse 60% 55% at 50% 50%, var(--color-marfil-luz) 0%, rgb(251 243 230 / 0) 70%),
+      var(--color-marfil);
+    min-height: min(52rem, calc(100svh - 5.5rem));
+    display: flex;
+    align-items: center;
+  }
+  .mesa > .relative { width: 100%; }
+  .plato-mesa {
+    position: absolute;
+    width: var(--t);
+    aspect-ratio: 1;
+    border-radius: 999px;
+    overflow: hidden;
+    background: var(--color-blanco);
+    box-shadow: 0 0 0 7px var(--color-blanco), 0 22px 40px -18px rgb(33 30 26 / 0.45), 0 4px 10px -4px rgb(33 30 26 / 0.18);
+  }
+  .plato-mesa img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.12); }
+  .plato--1 { --t: clamp(9rem, 22vw, 21rem); left: -5%; top: -9%; }
+  .plato--2 { --t: clamp(7rem, 15vw, 14rem); left: -4%; top: 42%; }
+  .plato--3 { --t: clamp(8rem, 19vw, 18rem); left: 9%; bottom: -12%; }
+  .plato--4 { --t: clamp(10rem, 24vw, 23rem); right: -5%; top: -10%; }
+  .plato--5 { --t: clamp(7rem, 15vw, 14rem); right: -3%; top: 46%; }
+  .plato--6 { --t: clamp(8rem, 19vw, 18rem); right: 10%; bottom: -13%; }
+  .plato--7 { --t: clamp(6rem, 11vw, 10.5rem); left: 44%; bottom: -8%; }
+  @media (max-width: 1023px) {
+    .plato--2, .plato--5 { display: none; }
+    .plato--7 { left: 42%; bottom: -10%; }
+  }
+  @media (max-width: 639px) {
+    .mesa { min-height: auto; }
+    .plato--1 { --t: 9.5rem; left: -2.5rem; top: -2.5rem; }
+    .plato--4 { --t: 10rem; right: -3rem; top: -3rem; }
+    .plato--3 { --t: 8.5rem; left: -2.5rem; bottom: -3rem; }
+    .plato--6 { --t: 8.5rem; right: -2.5rem; bottom: -3rem; }
+    .plato--7 { display: none; }
+/* ---------- Cinta: frases de la casa y platos en círculo, cruzando entre la portada y la carta ---------- */
+.cinta { position: relative; z-index: 2; margin-block: -1.5rem; overflow-x: clip; pointer-events: none; }
+.cinta-banda {
+  width: calc(100% + 6rem);
+  margin-left: -3rem;
+  padding-block: 0.85rem;
+  transform: rotate(-2deg);
+  background: var(--color-maiz);
+  color: var(--color-carbon);
+  border-block: 2px solid var(--color-carbon);
+  box-shadow: 0 14px 30px -16px rgb(33 30 26 / 0.45);
+}
+.cinta-pista { display: flex; width: max-content; }
+.cinta.en-pantalla .cinta-pista { animation: cinta 52s linear infinite; }
+.cinta-grupo {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.9rem, 2.4vw, 1.75rem);
+  padding-right: clamp(0.9rem, 2.4vw, 1.75rem);
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.cinta-grupo img {
+  display: block;
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 3px solid var(--color-blanco);
+  box-shadow: 0 4px 10px rgb(33 30 26 / 0.25);
+}
+@keyframes cinta { to { transform: translateX(-50%); } }

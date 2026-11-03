@@ -1,0 +1,514 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T20:00:00.000Z",
+  "title": "Design System: Algarrobo · Cocina Norteña",
+  "extensions": {
+    "colorMeta": {
+      "aji": {
+        "role": "primary",
+        "displayName": "Rojo Ají",
+        "canonical": "oklch(43.0% 0.146 27)",
+        "tonalRamp": [
+          "#210000",
+          "#4d0003",
+          "#7e0b0e",
+          "#a43630",
+          "#cb5a50",
+          "#f37d72",
+          "#ffb3a9",
+          "#ffe9e6"
+        ]
+      },
+      "aji-hondo": {
+        "role": "primary",
+        "displayName": "Ají Hondo",
+        "canonical": "oklch(35.9% 0.121 26)",
+        "tonalRamp": [
+          "#200000",
+          "#4d0003",
+          "#751e1b",
+          "#9a413a",
+          "#c0635a",
+          "#e7867c",
+          "#feb3aa",
+          "#fee9e6"
+        ]
+      },
+      "maiz": {
+        "role": "secondary",
+        "displayName": "Maíz Dorado",
+        "canonical": "oklch(76.8% 0.144 83)",
+        "tonalRamp": [
+          "#120900",
+          "#322200",
+          "#563d00",
+          "#7d5b03",
+          "#a67a02",
+          "#d09b14",
+          "#f6c04b",
+          "#ffecca"
+        ]
+      },
+      "maiz-claro": {
+        "role": "secondary",
+        "displayName": "Maíz Claro",
+        "canonical": "oklch(82.1% 0.134 85)",
+        "tonalRamp": [
+          "#120900",
+          "#312200",
+          "#553e00",
+          "#7b5c02",
+          "#a47b00",
+          "#cb9d2c",
+          "#f1c257",
+          "#ffedc7"
+        ]
+      },
+      "maiz-hondo": {
+        "role": "secondary",
+        "displayName": "Maíz Hondo",
+        "canonical": "oklch(49.7% 0.097 79)",
+        "tonalRamp": [
+          "#130900",
+          "#332100",
+          "#583c00",
+          "#7e5a0d",
+          "#a17b37",
+          "#c59e5b",
+          "#ebc27f",
+          "#ffeccd"
+        ]
+      },
+      "terracota": {
+        "role": "tertiary",
+        "displayName": "Terracota",
+        "canonical": "oklch(59.9% 0.141 43)",
+        "tonalRamp": [
+          "#1c0200",
+          "#431300",
+          "#702700",
+          "#9f3f08",
+          "#c66235",
+          "#ed8558",
+          "#feb597",
+          "#feeae1"
+        ]
+      },
+      "hierbas": {
+        "role": "tertiary",
+        "displayName": "Verde Hierbas",
+        "canonical": "oklch(44.3% 0.064 126)",
+        "tonalRamp": [
+          "#060e00",
+          "#1d2a02",
+          "#394821",
+          "#58683f",
+          "#788a60",
+          "#9aad81",
+          "#bed1a4",
+          "#e3f7c9"
+        ]
+      },
+      "carbon": {
+        "role": "neutral",
+        "displayName": "Carbón",
+        "canonical": "oklch(23.7% 0.009 75)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#282520",
+          "#45413d",
+          "#64615c",
+          "#85827d",
+          "#a8a49f",
+          "#ccc8c3",
+          "#f2eee8"
+        ]
+      },
+      "carbon-suave": {
+        "role": "neutral",
+        "displayName": "Carbón Suave",
+        "canonical": "oklch(43.8% 0.020 64)",
+        "tonalRamp": [
+          "#110904",
+          "#2c231b",
+          "#4a4037",
+          "#695f56",
+          "#8b8076",
+          "#aea399",
+          "#d3c7bc",
+          "#f8ece1"
+        ]
+      },
+      "marfil": {
+        "role": "neutral",
+        "displayName": "Marfil Cálido",
+        "canonical": "oklch(93.4% 0.036 79)",
+        "tonalRamp": [
+          "#130900",
+          "#2e2310",
+          "#4c402c",
+          "#6c5f4a",
+          "#8e806b",
+          "#b1a38c",
+          "#d6c7b0",
+          "#fbecd4"
+        ]
+      },
+      "marfil-luz": {
+        "role": "neutral",
+        "displayName": "Marfil Luz",
+        "canonical": "oklch(96.7% 0.017 77)",
+        "tonalRamp": [
+          "#130a00",
+          "#2f2414",
+          "#4d4231",
+          "#6d614f",
+          "#8f8370",
+          "#b2a693",
+          "#d7cab7",
+          "#fdf1e3"
+        ]
+      },
+      "piedra": {
+        "role": "neutral",
+        "displayName": "Piedra",
+        "canonical": "oklch(88.4% 0.048 79)",
+        "tonalRamp": [
+          "#130900",
+          "#312206",
+          "#503f23",
+          "#705e42",
+          "#927f62",
+          "#b5a284",
+          "#dac6a7",
+          "#ffecce"
+        ]
+      },
+      "borde": {
+        "role": "neutral",
+        "displayName": "Borde",
+        "canonical": "oklch(82.1% 0.056 79)",
+        "tonalRamp": [
+          "#130900",
+          "#332100",
+          "#523e1d",
+          "#725e3c",
+          "#947f5c",
+          "#b8a27e",
+          "#ddc6a1",
+          "#ffecce"
+        ]
+      },
+      "blanco": {
+        "role": "neutral",
+        "displayName": "Blanco",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Titular de la portada en dos líneas centradas: la primera en carbón y la segunda en ají. Sin rótulo encima."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de banda: carta y nosotros en ají sobre marfil; reservas y contacto en blanco sobre carbón."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de categoría con barra terracota (maíz sobre ají)."
+      },
+      "price": {
+        "displayName": "Precio",
+        "purpose": "Precios y códigos: ají sobre claro, maíz sobre ají o carbón; cifras tabulares."
+      },
+      "dish-name": {
+        "displayName": "Nombre de plato",
+        "purpose": "Nombres en tarjetas y listas, Archivo 800."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Párrafos y descripciones; ancho de lectura de 36 a 44rem."
+      },
+      "ui": {
+        "displayName": "Interfaz",
+        "purpose": "Botones, filtros, horarios y rótulos de formulario en 700."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Solo dentro de etiquetas de plato, en mayúsculas."
+      }
+    },
+    "shadows": [
+      {
+        "name": "plato-mesa",
+        "value": "0 0 0 7px #fff, 0 22px 40px -18px rgb(33 30 26 / 0.45), 0 4px 10px -4px rgb(33 30 26 / 0.18)",
+        "purpose": "Borde blanco de 7 px y sombra en capas que apoya cada plato en la mesa de la portada."
+      },
+      {
+        "name": "tarjeta",
+        "value": "0 2px 0 rgb(33 30 26 / 0.08), 0 14px 30px -18px rgb(33 30 26 / 0.45)",
+        "purpose": "Tarjetas de plato y de lista en reposo."
+      },
+      {
+        "name": "tarjeta-hover",
+        "value": "0 2px 0 rgb(33 30 26 / 0.08), 0 22px 36px -18px rgb(33 30 26 / 0.55)",
+        "purpose": "Tarjeta en hover, con subida de 3 px; solo con puntero fino."
+      },
+      {
+        "name": "panel",
+        "value": "0 30px 60px -28px rgb(0 0 0 / 0.6)",
+        "purpose": "Panel blanco de reserva sobre la banda carbón."
+      },
+      {
+        "name": "cabecera-scroll",
+        "value": "0 10px 24px -18px rgb(33 30 26 / 0.35)",
+        "purpose": "Cabecera clara cuando la página se ha desplazado, junto con una línea inferior de 1 px en borde."
+      },
+      {
+        "name": "foco-campo",
+        "value": "0 0 0 3px rgb(224 170 47 / 0.55)",
+        "purpose": "Halo maíz de los campos enfocados, junto con el borde carbón."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-salida",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Easing único de entradas, hovers y transiciones."
+      },
+      {
+        "name": "letra-entra",
+        "value": "720ms ease-salida, 24ms entre letras, 90ms por línea",
+        "purpose": "Letras del titular que entran en horizontal con desenfoque que se aclara; una vez por visita."
+      },
+      {
+        "name": "titular-seguridad",
+        "value": "1200ms",
+        "purpose": "Temporizador que muestra el titular aunque el script no corra."
+      },
+      {
+        "name": "asomar",
+        "value": "700ms ease-salida, translateY(12px)",
+        "purpose": "Propuesta, botones y horario de la portada, al terminar el titular."
+      },
+      {
+        "name": "plato-llega",
+        "value": "1000ms ease-salida, desde scale(0.94) rotate(-10deg), 100ms + 70ms por plato",
+        "purpose": "Los platos de la mesa se asientan escalonados desde un estado visible; nunca arrancan en opacidad 0."
+      },
+      {
+        "name": "persiana",
+        "value": "380ms ease-salida, clip-path",
+        "purpose": "Menú móvil carbón que baja; enlaces entran en horizontal escalonados 55 ms."
+      },
+      {
+        "name": "estado",
+        "value": "160–220ms",
+        "purpose": "Cambios de color y borde en filtros, días, horarios, campos y tarjetas."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms",
+        "purpose": "Con prefers-reduced-motion todo queda estático y visible."
+      },
+      {
+        "name": "revelar",
+        "value": "opacity 650ms + translateY(1.5rem→0) 800ms cubic-bezier(0.16,1,0.3,1), escalón 80ms (máx. 5)",
+        "purpose": "Aparición única al hacer scroll de los bloques con data-revelar (js/ui/revelar.js); solo lo que está bajo la pantalla al cargar; desactivada con movimiento reducido."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "movil-max",
+        "value": "639px"
+      },
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón primario",
+      "kind": "button",
+      "refersTo": "button-primario",
+      "description": "Ají con texto blanco: reservar sobre claro (cabecera, portada) y confirmar en el panel de reserva.",
+      "html": "<a href=\"#\" class=\"ds-btn ds-btn-primario\">Reservar mesa <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 3.25rem; padding: 0.8rem 1.6rem; border-radius: 10px; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 1.08rem; line-height: 1.1; border: 2px solid transparent; cursor: pointer; text-decoration: none; transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1), color 180ms, border-color 180ms, transform 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 3px solid var(--color-aji, #8f211e); outline-offset: 3px; } .ds-btn-primario { background: var(--color-aji, #8f211e); color: #fff; } .ds-btn-primario:hover { background: var(--color-aji-hondo, #6f1816); }"
+    },
+    {
+      "name": "Botón maíz",
+      "kind": "button",
+      "refersTo": "button-maiz",
+      "description": "Maíz con texto carbón: el botón de reservar sobre carbón (Hoy, menú móvil, contacto).",
+      "html": "<div style=\"background:#211e1a;padding:24px\"><a href=\"#\" class=\"ds-btn-maiz\">Reservar mesa <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a></div>",
+      "css": ".ds-btn-maiz { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3.25rem; padding: 0.8rem 1.6rem; border-radius: 10px; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 1.08rem; line-height: 1.1; text-decoration: none; border: 2px solid transparent; background: var(--color-maiz, #e0aa2f); color: var(--color-carbon, #211e1a); transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-maiz:hover { background: var(--color-maiz-claro, #ecbd52); } .ds-btn-maiz:focus-visible { outline: 3px solid var(--color-aji, #8f211e); outline-offset: 3px; }"
+    },
+    {
+      "name": "Botón línea",
+      "kind": "button",
+      "refersTo": "button-linea",
+      "description": "Borde carbón de 2 px; se rellena de carbón en hover. Acompaña al primario en la portada. Variante clara en marfil para fondos oscuros.",
+      "html": "<button class=\"ds-btn-linea\">Ver la carta</button>",
+      "css": ".ds-btn-linea { display: inline-flex; align-items: center; min-height: 2.9rem; padding: 0.55rem 1.2rem; border-radius: 10px; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 1rem; background: transparent; color: var(--color-carbon, #211e1a); border: 2px solid var(--color-carbon, #211e1a); cursor: pointer; transition: background-color 180ms, color 180ms; } .ds-btn-linea:hover { background: var(--color-carbon, #211e1a); color: var(--color-marfil, #f6e7cf); } .ds-btn-linea:focus-visible { outline: 3px solid var(--color-aji, #8f211e); outline-offset: 3px; }"
+    },
+    {
+      "name": "Filtros de la carta",
+      "kind": "chip",
+      "refersTo": "filtro",
+      "description": "Fichas blancas con borde carbón; la elegida en ají.",
+      "html": "<div class=\"ds-filtros\"><button class=\"ds-filtro\" aria-pressed=\"true\">Toda la carta <span>18</span></button><button class=\"ds-filtro\" aria-pressed=\"false\">Especialidades <span>3</span></button></div>",
+      "css": ".ds-filtros { display: flex; gap: 0.6rem; flex-wrap: wrap; } .ds-filtro { min-height: 2.9rem; padding: 0.5rem 1.15rem; border-radius: 10px; border: 2px solid var(--color-carbon, #211e1a); background: #fff; color: var(--color-carbon, #211e1a); font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 0.98rem; cursor: pointer; transition: background-color 160ms, color 160ms, border-color 160ms; } .ds-filtro span { margin-left: 0.5rem; opacity: 0.75; font-variant-numeric: tabular-nums; } .ds-filtro:hover { background: var(--color-carbon, #211e1a); color: var(--color-marfil, #f6e7cf); } .ds-filtro[aria-pressed=\"true\"] { background: var(--color-aji, #8f211e); border-color: var(--color-aji, #8f211e); color: #fff; } .ds-filtro:focus-visible { outline: 3px solid var(--color-aji, #8f211e); outline-offset: 3px; }"
+    },
+    {
+      "name": "Tarjeta de plato",
+      "kind": "card",
+      "refersTo": "tarjeta",
+      "description": "Blanca, 14 px, foto 4:3, nombre en 800, precio en Calistoga ají y etiqueta maíz.",
+      "html": "<article class=\"ds-tarjeta\"><div class=\"ds-tarjeta-foto\"><span class=\"ds-etiqueta\">Picante</span></div><div class=\"ds-tarjeta-cuerpo\"><h4>Ceviche de mero</h4><p>Mero del día, ají limo, camote y cancha.</p><p class=\"ds-precio\">S/ 42</p></div></article>",
+      "css": ".ds-tarjeta { width: 280px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 0 rgb(33 30 26 / 0.08), 0 14px 30px -18px rgb(33 30 26 / 0.45); font-family: Archivo, ui-sans-serif, system-ui, sans-serif; color: var(--color-carbon, #211e1a); transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-tarjeta:hover { transform: translateY(-3px); box-shadow: 0 2px 0 rgb(33 30 26 / 0.08), 0 22px 36px -18px rgb(33 30 26 / 0.55); } .ds-tarjeta-foto { position: relative; aspect-ratio: 4 / 3; background: var(--color-piedra, #ead6b6); } .ds-tarjeta-foto .ds-etiqueta { position: absolute; top: 12px; left: 12px; } .ds-etiqueta { display: inline-flex; padding: 0.3rem 0.7rem; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; border-radius: 6px; background: var(--color-maiz, #e0aa2f); color: var(--color-carbon, #211e1a); } .ds-tarjeta-cuerpo { padding: 20px; } .ds-tarjeta-cuerpo h4 { margin: 0; font-weight: 800; font-size: 1.2rem; line-height: 1.375; } .ds-tarjeta-cuerpo p { margin: 0.4rem 0 0; font-size: 0.98rem; line-height: 1.6; color: var(--color-carbon-suave, #5a5047); } .ds-tarjeta-cuerpo .ds-precio { margin-top: 1rem; font-family: Calistoga, Georgia, serif; font-size: 1.7rem; line-height: 1; color: var(--color-aji, #8f211e); font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Campo de formulario",
+      "kind": "input",
+      "refersTo": "campo",
+      "description": "Blanco con borde de 2 px, borde carbón y halo maíz al enfocar y error en ají con icono dibujado.",
+      "html": "<label class=\"ds-campo-wrap\"><span>Nombre de quien reserva</span><input class=\"ds-campo\" aria-invalid=\"true\" value=\"\"><span class=\"ds-error\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7.5v5.5M12 16.5v.01\"/></svg>Escribe tu nombre.</span></label>",
+      "css": ".ds-campo-wrap { display: grid; gap: 6px; width: 300px; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; color: var(--color-carbon, #211e1a); } .ds-campo-wrap > span:first-child { font-weight: 700; } .ds-campo { min-height: 3.1rem; padding: 0.7rem 0.95rem; font: inherit; font-size: 1rem; background: #fff; border: 2px solid var(--color-borde, #d8c19c); border-radius: 10px; color: inherit; caret-color: var(--color-aji, #8f211e); transition: border-color 160ms, box-shadow 160ms; } .ds-campo:hover { border-color: var(--color-carbon-suave, #5a5047); } .ds-campo:focus { outline: none; border-color: var(--color-carbon, #211e1a); box-shadow: 0 0 0 3px rgb(224 170 47 / 0.55); } .ds-campo[aria-invalid=\"true\"] { border-color: var(--color-aji, #8f211e); } .ds-error { display: inline-flex; align-items: center; gap: 0.4em; font-size: 0.92rem; font-weight: 600; color: var(--color-aji, #8f211e); }"
+    },
+    {
+      "name": "Días del calendario",
+      "kind": "custom",
+      "refersTo": "dia-disponible",
+      "description": "Cada estado con forma y palabra: disponible, pocas (tinte y borde discontinuo), lleno (rayado), elegido (ají), hoy (punto terracota).",
+      "html": "<div class=\"ds-dias\"><button class=\"ds-dia ds-dia--disponible ds-dia--hoy\">12</button><button class=\"ds-dia ds-dia--limitado\">13<span>pocas</span></button><button class=\"ds-dia ds-dia--completo\" disabled>14<span>lleno</span></button><button class=\"ds-dia\" aria-pressed=\"true\">15</button></div>",
+      "css": ".ds-dias { display: grid; grid-template-columns: repeat(4, 3.5rem); gap: 6px; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; } .ds-dia { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 3rem; border-radius: 10px; font: inherit; font-weight: 700; font-variant-numeric: tabular-nums; border: 2px solid transparent; color: var(--color-carbon, #211e1a); cursor: pointer; transition: background-color 160ms, border-color 160ms, color 160ms; } .ds-dia span { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; line-height: 1; margin-top: 3px; } .ds-dia--disponible { background: #fff; border-color: var(--color-borde, #d8c19c); } .ds-dia--disponible:hover, .ds-dia--limitado:hover { border-color: var(--color-carbon, #211e1a); } .ds-dia--limitado { background: rgb(224 170 47 / 0.22); border-color: var(--color-maiz-hondo, #7f5b0f); border-style: dashed; } .ds-dia--completo { color: var(--color-carbon-suave, #5a5047); background-color: var(--color-piedra, #ead6b6); background-image: repeating-linear-gradient(135deg, rgb(33 30 26 / 0.16) 0 2px, transparent 2px 7px); cursor: not-allowed; } .ds-dia[aria-pressed=\"true\"] { background: var(--color-aji, #8f211e); border-color: var(--color-aji, #8f211e); color: #fff; } .ds-dia--hoy::after { content: \"\"; position: absolute; top: 5px; right: 6px; width: 7px; height: 7px; border-radius: 999px; background: var(--color-terracota, #c35f32); } .ds-dia:focus-visible { outline: 3px solid var(--color-aji, #8f211e); outline-offset: 3px; }"
+    },
+    {
+      "name": "Horarios",
+      "kind": "custom",
+      "refersTo": "horario",
+      "description": "Borde carbón de 2 px; elegido en ají; lleno con rayado, hora tachada y la palabra.",
+      "html": "<div class=\"ds-horarios\"><button class=\"ds-horario\"><b>13:00</b><span>4 mesas</span></button><button class=\"ds-horario\" aria-pressed=\"true\"><b>13:30</b><span>última mesa</span></button><button class=\"ds-horario\" disabled><b>14:00</b><span>lleno</span></button></div>",
+      "css": ".ds-horarios { display: grid; grid-template-columns: repeat(3, 6.5rem); gap: 8px; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; } .ds-horario { display: grid; min-height: 3.1rem; padding: 0.4rem 0.5rem; border-radius: 10px; border: 2px solid var(--color-carbon, #211e1a); background: #fff; color: var(--color-carbon, #211e1a); font: inherit; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; cursor: pointer; transition: background-color 160ms, color 160ms, border-color 160ms; } .ds-horario b { font-size: 1.08rem; } .ds-horario span { font-size: 0.75rem; font-weight: 600; opacity: 0.8; } .ds-horario:hover:not([disabled]) { background: var(--color-marfil, #f6e7cf); } .ds-horario[aria-pressed=\"true\"] { background: var(--color-aji, #8f211e); border-color: var(--color-aji, #8f211e); color: #fff; } .ds-horario[disabled] { border-color: var(--color-borde, #d8c19c); color: var(--color-carbon-suave, #5a5047); background-color: var(--color-piedra, #ead6b6); background-image: repeating-linear-gradient(135deg, rgb(33 30 26 / 0.12) 0 2px, transparent 2px 7px); cursor: not-allowed; } .ds-horario[disabled] b { text-decoration: line-through; text-decoration-thickness: 2px; } .ds-horario:focus-visible { outline: 3px solid var(--color-aji, #8f211e); outline-offset: 3px; }"
+    },
+    {
+      "name": "Cabecera",
+      "kind": "nav",
+      "refersTo": "cabecera",
+      "description": "Cabecera clara (marfil luz al 95 % con desenfoque): logo carbón, \"Cocina norteña\" en ají, enlaces carbón con subrayado ají y botón primario.",
+      "html": "<header class=\"ds-cabecera\"><span class=\"ds-marca\">Algarrobo<small>Cocina norteña</small></span><nav><a class=\"ds-enlace\" href=\"#\">Carta</a><a class=\"ds-enlace\" href=\"#\">Reservas</a><a class=\"ds-enlace\" href=\"#\">Nosotros</a></nav><a class=\"ds-cab-btn\" href=\"#\">Reservar mesa</a></header>",
+      "css": ".ds-cabecera { display: flex; align-items: center; gap: 28px; height: 4.5rem; padding: 0 32px; background: rgb(251 243 230 / 0.95); backdrop-filter: blur(6px); color: var(--color-carbon, #211e1a); border-bottom: 1px solid var(--color-borde, #d8c19c); box-shadow: 0 10px 24px -18px rgb(33 30 26 / 0.35); font-family: Archivo, ui-sans-serif, system-ui, sans-serif; } .ds-marca { font-family: Calistoga, Georgia, serif; font-size: 1.6rem; line-height: 1; } .ds-marca small { display: block; margin-top: 2px; font-family: Archivo, ui-sans-serif, sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-aji, #8f211e); } .ds-cabecera nav { display: flex; gap: 28px; margin-left: auto; } .ds-enlace { position: relative; padding: 0.5rem 0.15rem; font-weight: 650; color: inherit; text-decoration: none; transition: color 160ms; } .ds-enlace::after { content: \"\"; position: absolute; left: 0.15rem; right: 0.15rem; bottom: 0.1rem; height: 3px; border-radius: 2px; background: var(--color-aji, #8f211e); transform: scaleX(0); transform-origin: left; transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-enlace:hover { color: var(--color-aji, #8f211e); } .ds-enlace:hover::after { transform: scaleX(1); } .ds-enlace:focus-visible, .ds-cab-btn:focus-visible { outline: 3px solid var(--color-aji, #8f211e); outline-offset: 3px; } .ds-cab-btn { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.5rem 1.15rem; border-radius: 10px; font-weight: 700; text-decoration: none; background: var(--color-aji, #8f211e); color: #fff; transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-cab-btn:hover { background: var(--color-aji-hondo, #6f1816); }"
+    },
+    {
+      "name": "La mesa servida",
+      "kind": "custom",
+      "refersTo": "plato-mesa",
+      "description": "Portada marfil con luz cálida al centro, platos redondos con borde blanco de 7 px cortados por los bordes y el titular al centro.",
+      "html": "<section class=\"ds-mesa\"><div class=\"ds-plato-mesa ds-p1\" aria-hidden=\"true\"></div><div class=\"ds-plato-mesa ds-p2\" aria-hidden=\"true\"></div><div class=\"ds-plato-mesa ds-p3\" aria-hidden=\"true\"></div><div class=\"ds-plato-mesa ds-p4\" aria-hidden=\"true\"></div><div class=\"ds-mesa-centro\"><h1>El sabor del norte peruano,<span>a fuego de leña</span></h1><p>Cabrito a la norteña, arroz con pato y ceviche de mero con ají limo.</p><p class=\"ds-mesa-horario\">Almuerzo 12:00–16:30 <b aria-hidden=\"true\">·</b> Cena 19:00–23:00</p></div></section>",
+      "css": ".ds-mesa { position: relative; overflow: hidden; display: grid; place-items: center; min-height: 420px; padding: 72px 24px; background: radial-gradient(ellipse 60% 55% at 50% 50%, #fbf3e6 0%, rgb(251 243 230 / 0) 70%), var(--color-marfil, #f6e7cf); } .ds-plato-mesa { position: absolute; aspect-ratio: 1; border-radius: 999px; overflow: hidden; background: radial-gradient(circle at 45% 40%, #f6e7cf 0 28%, #c35f32 29% 52%, #4a5a32 53% 66%, #fff 67%); box-shadow: 0 0 0 7px #fff, 0 22px 40px -18px rgb(33 30 26 / 0.45), 0 4px 10px -4px rgb(33 30 26 / 0.18); animation: ds-plato-llega 1000ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both; } .ds-p1 { width: 170px; left: -40px; top: -40px; } .ds-p2 { width: 190px; right: -50px; top: -50px; animation-delay: 170ms; } .ds-p3 { width: 150px; left: -36px; bottom: -48px; animation-delay: 240ms; } .ds-p4 { width: 150px; right: -36px; bottom: -48px; animation-delay: 310ms; } .ds-mesa-centro { position: relative; max-width: 30rem; text-align: center; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; } .ds-mesa-centro h1 { margin: 0; font-family: Calistoga, Georgia, serif; font-weight: 400; font-size: 2.6rem; line-height: 1; letter-spacing: -0.01em; color: var(--color-carbon, #211e1a); } .ds-mesa-centro h1 span { display: block; color: var(--color-aji, #8f211e); } .ds-mesa-centro p { margin: 1rem 0 0; font-size: 1.05rem; line-height: 1.6; color: var(--color-carbon-suave, #5a5047); } .ds-mesa-centro .ds-mesa-horario { font-size: 0.95rem; font-weight: 600; color: var(--color-carbon, #211e1a); } .ds-mesa-horario b { margin: 0 0.35rem; color: var(--color-terracota, #c35f32); } @keyframes ds-plato-llega { from { transform: scale(0.94) rotate(-10deg); } to { transform: none; } } @media (prefers-reduced-motion: reduce) { .ds-plato-mesa { animation: none; } }"
+    },
+    {
+      "id": "ds-plato-detalle",
+      "name": "Ventana de detalle del plato",
+      "description": "dialog nativo con foto, origen, precio, descripción e historia; panel de dos columnas en escritorio y hoja inferior en móvil; entrada 320/420 ms, salida 220 ms; foco atrapado y Escape. Ver js/ui/plato-detalle.js."
+    },
+    {
+      "id": "ds-plato-velo",
+      "name": "Velo de la tarjeta de plato",
+      "description": "Al pasar el mouse (puntero fino) o al enfocar, un degradado carbón sube dentro de la foto con origen en maíz, descripción en marfil (4 líneas) y Ver historia; pista + siempre visible en táctil; toda la tarjeta abre el detalle."
+    }
+  ],
+  "narrative": {
+    "northStar": "La mesa servida",
+    "overview": "Algarrobo se lee como una picantería norteña contemporánea vista desde arriba: la portada es una mesa marfil con los platos de la casa alrededor de los bordes, cortados por ellos, y el titular al centro bajo una luz cálida. El resto de la página está hecho de bandas sólidas a todo el ancho que alternan carbón con superficies claras (marfil y blanco). El ají, rojo de marca, aparece como un solo bloque grande, la banda de especialidades dentro de la carta, y como acento en todo lo demás: la segunda línea del titular, los botones de reservar sobre claro, los precios, lo elegido y el foco. El maíz señala sobre carbón y en las etiquetas. La comida se muestra grande y enmarcada, nunca como miniatura decorativa.\n\nEl equilibrio de color se suavizó a pedido del dueño (\"los colores se ven muy bruscos\"): la paleta es la misma, pero la cabecera es clara, el aviso y el pie son carbón y las grandes superficies rojas se redujeron a una. El carácter sigue siendo firme: formas de 10 a 14 px, bordes funcionales de 2 px, botones sólidos y pesos tipográficos altos.\n\nLa densidad es media y robusta: títulos en Calistoga, una serif pesada y cálida; interfaz en Archivo en pesos 600 a 800. Se rechaza de forma expresa el aire de cafetería de especialidad (beige dominante, todo blanco, títulos finos, espacios exagerados, detalles delicados), según los compromisos de marca de PRODUCT.md: la claridad nueva se compensa con bandas carbón enteras y tipografía pesada.",
+    "keyCharacteristics": [
+      "Orden de bandas: aviso carbón, cabecera clara, portada marfil (la mesa), \"Hoy\" carbón, carta marfil con la banda ají de especialidades, reservas carbón, nosotros marfil, \"Lo que llega del norte\" blanco, contacto y pie carbón con franja de créditos tras un filete fino.",
+      "La mesa servida en la portada: siete platos redondos vistos desde arriba, con borde blanco y sombra suave, recortados por los bordes; emblema, titular, propuesta, botones y horario al centro.",
+      "El ají es un único bloque grande (especialidades) más acentos; nunca dos superficies grandes de ají en la página.",
+      "Calistoga para títulos y precios; Archivo para todo lo demás, con la interfaz en 700–800.",
+      "Esquinas de 10 px en controles, 14 px en tarjetas, bordes de 2 px.",
+      "Cada estado de calendario y horario se distingue por forma y palabra, no solo por color."
+    ],
+    "rules": [
+      {
+        "name": "La regla de la banda entera",
+        "body": "El color de fondo cambia por banda completa, a todo el ancho, nunca por recuadros flotando sobre un fondo neutro. Las bandas de contenido alternan carbón con claro (marfil o blanco) y dos bandas seguidas no comparten color.",
+        "section": "colors"
+      },
+      {
+        "name": "La regla del ají único",
+        "body": "El ají ocupa un solo bloque grande en la página, la banda de especialidades de la carta; en todo lo demás es acento (titular, botón primario, precio, elegido, foco). No se pinta de ají la portada, la cabecera, el pie ni ninguna otra banda.",
+        "section": "colors"
+      },
+      {
+        "name": "La regla del maíz que señala",
+        "body": "El maíz vive sobre carbón (reservar, precios, rótulos) y en etiquetas. Sobre ají solo aparece como precio Calistoga grande o barra decorativa; sobre claro solo como fondo con texto carbón, y nunca como texto.",
+        "section": "colors"
+      },
+      {
+        "name": "La regla de la terracota muda",
+        "body": "La terracota decora (barras, marcadores, puntos) y nunca lleva texto ni es el único portador de un estado.",
+        "section": "colors"
+      },
+      {
+        "name": "La regla del peso alto",
+        "body": "Nada de interfaz por debajo de 600: botones y filtros en 700, nombres de plato y etiquetas en 800. El 400 queda para los párrafos.",
+        "section": "typography"
+      },
+      {
+        "name": "La regla de la serif que cobra",
+        "body": "Calistoga se reserva para títulos, precios, códigos de reserva y números de paso; no se usa en párrafos ni en botones.",
+        "section": "typography"
+      },
+      {
+        "name": "La regla de la sombra difusa",
+        "body": "Todas las sombras son desenfocadas y con desplazamiento negativo (spread hacia dentro); no hay sombras duras desplazadas.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do alternar bandas completas de carbón y claro (marfil o blanco), sin repetir color en dos bandas seguidas.",
+      "Do guardar el ají para un solo bloque grande (la banda de especialidades) y usarlo como acento en todo lo demás.",
+      "Do usar el primario ají con texto blanco para reservar sobre claro, y el botón maíz con texto carbón para reservar sobre carbón.",
+      "Do poner los precios en Calistoga: ají sobre claro, maíz sobre ají o carbón.",
+      "Do dar a cada estado de calendario y horario una forma (rayado, borde discontinuo, tachado) y una palabra, además del color.",
+      "Do mantener 10 px de radio en controles, 14 px en tarjetas y bordes funcionales de 2 px.",
+      "Do usar estos mismos tokens y componentes en el futuro panel administrativo.",
+      "Do respetar `prefers-reduced-motion` en toda animación nueva."
+    ],
+    "donts": [
+      "Don't pintar de ají una segunda superficie grande (portada, cabecera, pie u otra banda).",
+      "Don't usar la terracota para texto: no alcanza 4.5:1 sobre ninguno de los fondos.",
+      "Don't usar maíz sobre ají fuera de precios Calistoga grandes o barras decorativas (4.1:1), ni maíz como texto sobre claro.",
+      "Don't volver al aire de cafetería: beige dominante, secciones todas blancas, títulos finos o espacios exagerados.",
+      "Don't marcar listas o tarjetas con bordes laterales de color; para rótulos de datos se usa el marcador cuadrado terracota.",
+      "Don't usar sombras duras desplazadas; las sombras son difusas.",
+      "Don't usar Calistoga en párrafos o botones, ni Archivo por debajo de 600 en interfaz."
+    ]
+  }
+}

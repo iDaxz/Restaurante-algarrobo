@@ -1,0 +1,27 @@
+      <!-- HOY: banda carbón -->
+      <section aria-label="Hoy en Algarrobo" class="bg-carbon text-marfil">
+        <div class="mx-auto max-w-7xl px-4 sm:px-8 py-10 lg:py-12" data-pizarra>
+          <div class="grid gap-8 lg:grid-cols-12 lg:items-start">
+            <div class="lg:col-span-6" data-revelar>
+              <h2 class="display text-[1.75rem] text-maiz">
+                Hoy en la cocina
+                <span
+                  class="text-marfil text-[1rem] font-sans font-semibold ml-1"
+                  data-pizarra-fecha
+                ></span>
+              </h2>
+              <ul class="mt-4 grid gap-2.5 max-w-lg" data-pizarra-platos></ul>
+            </div>
+            <div class="lg:col-span-5 lg:col-start-8" data-revelar>
+              <h2 class="display text-[1.75rem] text-maiz">Mesas para hoy</h2>
+              <div
+                class="mt-4 grid gap-4"
+                data-pizarra-turnos
+                aria-live="polite"
+              >
+                <p class="text-marfil cargando">Contando mesas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

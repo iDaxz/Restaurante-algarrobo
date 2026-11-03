@@ -1,0 +1,129 @@
+/* ---------- Sección "Hoy": la jornada como una línea y los próximos días (sin precios: están en la carta) ---------- */
+.jornada { background: var(--color-marfil-luz); border-block: 1px solid var(--color-borde); color: var(--color-carbon); }
+
+.jornada-cabeza { display: grid; gap: 1.25rem; }
+@media (min-width: 1024px) { .jornada-cabeza { grid-template-columns: 1fr auto; align-items: end; gap: 3rem; } }
+.jornada-titulo { display: grid; font-size: clamp(2.3rem, 5.4vw, 4rem); line-height: 0.98; }
+.jornada-titulo-dia { color: var(--color-aji); }
+.jornada-datos { display: grid; justify-items: start; gap: 0.6rem; }
+@media (min-width: 1024px) { .jornada-datos { justify-items: end; text-align: right; } }
+.jornada-estado { padding: 0.45rem 0.9rem; border-radius: 999px; background: var(--color-blanco); border: 1px solid var(--color-borde); font-size: 0.92rem; }
+.jornada-nota { max-width: 24rem; font-size: 0.95rem; color: var(--color-carbon-suave); text-wrap: pretty; }
+
+/* La regla: tramos por turno en columnas proporcionales a sus minutos */
+.jornada-dia { margin-top: 2.5rem; }
+.jornada-regla { padding-top: 2.6rem; }
+.jornada-carril { position: relative; }
+.jornada-pista { position: relative; display: grid; grid-template-columns: var(--columnas); height: 3.4rem; }
+@media (min-width: 640px) { .jornada-pista { height: 4.25rem; } }
+.jornada-pista::before { content: ""; position: absolute; inset-inline: 0; top: 50%; border-top: 2px dashed var(--color-borde); }
+.jornada-hueco { position: relative; display: grid; place-items: center; min-width: 0; }
+.jornada-hueco > span { padding-inline: 0.4rem; background: var(--color-marfil-luz); font-size: 0.75rem; font-weight: 700; color: var(--color-carbon-suave); }
+.jornada-tramo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding-inline: 0.75rem;
+  border-radius: 14px;
+  background: var(--color-maiz);
+  color: var(--color-carbon);
+  font-weight: 800;
+  font-size: clamp(0.85rem, 1.7vw, 1.1rem);
+  white-space: nowrap;
+  overflow: hidden;
+}
+@media (min-width: 640px) { .jornada-tramo { padding-inline: 1rem; } }
+.jornada-tramo > span { position: relative; z-index: 1; }
+.jornada-tramo.sin-sitio { background: var(--color-piedra); color: var(--color-carbon-suave); }
+.jornada-tramo.descansa { background: transparent; border: 2px dashed var(--color-borde); color: var(--color-carbon-suave); }
+/* Lo que ya pasó del día queda rayado encima de la regla */
+.jornada-pasado {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(-45deg, rgb(251 243 230 / 0.78) 0 5px, rgb(251 243 230 / 0.4) 5px 10px);
+}
+/* La aguja de ahora: su etiqueta se desliza para no salirse por los bordes */
+.jornada-aguja { position: absolute; top: -0.5rem; bottom: -0.5rem; left: calc(var(--p) * 1%); width: 2px; margin-left: -1px; background: var(--color-aji); }
+.jornada-aguja::after { content: ""; position: absolute; bottom: -5px; left: 50%; width: 10px; height: 10px; margin-left: -5px; border-radius: 999px; background: var(--color-aji); }
+.jornada-aguja-hora {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 0.35rem;
+  transform: translateX(calc(var(--p) * -1%));
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: var(--color-carbon);
+  color: var(--color-marfil);
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.jornada-horas { position: relative; height: 1.4rem; margin-top: 0.85rem; }
+.jornada-hora { position: absolute; top: 0; transform: translateX(-50%); font-size: 0.75rem; font-weight: 700; color: var(--color-carbon-suave); font-variant-numeric: tabular-nums; }
+.jornada-hora::before { content: ""; position: absolute; left: 50%; top: -0.5rem; width: 1px; height: 0.35rem; background: var(--color-carbon-suave); opacity: 0.5; }
+.jornada-hora:first-child { transform: none; }
+.jornada-hora:first-child::before { left: 0; }
+.jornada-hora:last-child { transform: translateX(-100%); }
+.jornada-hora:last-child::before { left: 100%; }
+/* En móvil se leen cada cuatro horas; en tablet cada dos; en escritorio todas */
+.jornada-hora[data-cada="1"], .jornada-hora[data-cada="2"] { color: transparent; }
+@media (min-width: 640px) { .jornada-hora[data-cada="2"] { color: var(--color-carbon-suave); } }
+@media (min-width: 1024px) { .jornada-hora[data-cada="1"] { color: var(--color-carbon-suave); } }
+
+/* Lo que dice cada turno: en fichas en móvil, alineado bajo su tramo desde 640 px */
+.jornada-turnos { display: grid; gap: 0.75rem; margin-top: 1.25rem; }
+.jornada-turno { display: grid; align-content: start; justify-items: start; gap: 0.35rem; min-width: 0; padding: 1rem 1.1rem; border-radius: 16px; background: var(--color-blanco); border: 1px solid var(--color-borde); }
+@media (max-width: 639px) { .jornada-turno { grid-column: auto !important; } }
+@media (min-width: 640px) {
+  .jornada-turnos { grid-template-columns: var(--columnas); column-gap: 0; margin-top: 0.75rem; }
+  .jornada-turno { padding: 0 1rem; background: none; border: 0; border-radius: 0; }
+}
+.jornada-turno-nombre { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.6rem; font-size: 1.2rem; font-weight: 800; }
+.jornada-turno-horas { font-size: 0.9rem; font-weight: 700; color: var(--color-carbon-suave); font-variant-numeric: tabular-nums; }
+.jornada-turno-ahora { align-self: center; padding: 0.15rem 0.5rem; border-radius: 6px; background: var(--color-aji); color: var(--color-blanco); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+.jornada-turno-texto { font-size: 0.95rem; color: var(--color-carbon-suave); text-wrap: pretty; }
+.jornada-turno.sin-sitio .jornada-turno-nombre { color: var(--color-carbon-suave); }
+.jornada-reservar { margin-top: 0.4rem; min-height: 2.6rem; padding: 0.4rem 1.1rem; font-size: 0.95rem; }
+.jornada-descanso { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 1.5rem; font-size: 1.05rem; }
+.jornada-aviso { margin-top: 1rem; color: var(--color-carbon-suave); }
+
+/* Los próximos días: siete fichas con el estado de mesas; un toque abre la reserva en ese día */
+.jornada-semana { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-borde); }
+.jornada-semana-titulo { font-size: 1.1rem; font-weight: 800; }
+.jornada-dias { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0.4rem; margin-top: 1rem; }
+@media (min-width: 640px) { .jornada-dias { gap: 0.75rem; } }
+.jornada-dia-boton {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem 0.2rem;
+  border-radius: 14px;
+  background: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  transition: border-color 180ms, transform 220ms var(--ease-salida);
+}
+.jornada-dia-boton:not([disabled]):hover { border-color: var(--color-carbon); transform: translateY(-2px); }
+.jornada-dia-boton:not([disabled]):active { transform: scale(0.97); }
+.jornada-dia-boton:focus-visible { outline: 3px solid var(--color-aji); outline-offset: 2px; }
+.jornada-dia-boton[disabled] { cursor: default; background: transparent; border-style: dashed; }
+.jornada-dia-nombre { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-carbon-suave); }
+.jornada-dia-numero { font-size: clamp(1.35rem, 3vw, 2rem); line-height: 1; }
+.jornada-dia-boton[disabled] .jornada-dia-numero { color: var(--color-carbon-suave); }
+.jornada-dia-estado { display: inline-flex; align-items: center; gap: 0.3rem; white-space: nowrap; font-size: 0.7rem; font-weight: 700; color: var(--color-carbon-suave); }
+.jornada-dia-punto { width: 0.55rem; height: 0.55rem; flex: none; border-radius: 999px; background: var(--color-borde); }
+[data-estado="disponible"] .jornada-dia-punto { background: #5e8a3a; }
+[data-estado="limitado"] .jornada-dia-punto { background: var(--color-maiz); }
+[data-estado="completo"] .jornada-dia-punto { background: var(--color-aji); }
+[data-estado="cerrado"] .jornada-dia-punto { background: transparent; border: 1.5px solid var(--color-carbon-suave); }
+@media (max-width: 639px) { .jornada-dia-texto { display: none; } }
+@media (min-width: 1024px) { .jornada-dia-estado { gap: 0.35rem; font-size: 0.78rem; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .jornada-dia-boton { transition: none; }
+}

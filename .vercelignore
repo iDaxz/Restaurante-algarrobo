@@ -1,0 +1,7 @@
+# Vercel publica solo la web: todo lo demás (backend, pruebas, documentos) queda fuera.
+/*
+!index.html
+!admin.html
+!js
+!assets
+!vercel.json

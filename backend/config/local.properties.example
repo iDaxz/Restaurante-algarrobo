@@ -1,0 +1,13 @@
+# Copia este archivo como "local.properties" (en esta misma carpeta) y completa los valores.
+# local.properties no se versiona: aquí viven las credenciales de tu máquina.
+# En producción se usan variables de entorno (ALGARROBO_DB_URL, ALGARROBO_DB_CLAVE, ALGARROBO_ADMIN_CLAVE, etc.).
+
+algarrobo.db.url=jdbc:postgresql://localhost:5432/algarrobo
+algarrobo.db.url-pruebas=jdbc:postgresql://localhost:5432/algarrobo_test
+algarrobo.db.usuario=algarrobo_app
+algarrobo.db.clave=LA_CONTRASEÑA_QUE_ELEGISTE
+
+# Primer administrador del panel (se crea al arrancar si aún no hay usuarios).
+# Contraseña de al menos 12 caracteres. Una vez creado, puedes borrar estas dos líneas.
+algarrobo.admin.correo=tu-correo@ejemplo.com
+algarrobo.admin.clave=UNA_CONTRASEÑA_LARGA_Y_TUYA

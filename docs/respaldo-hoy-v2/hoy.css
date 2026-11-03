@@ -1,0 +1,35 @@
+
+/* ---------- Banda "Hoy": estado del local y mesas por turno (sin precios: están en la carta) ---------- */
+.hoy-fecha { display: grid; line-height: 0.95; }
+.hoy-fecha-dia { font-size: clamp(2.8rem, 6vw, 4.2rem); color: var(--color-maiz); }
+.hoy-fecha-resto { margin-top: 0.35rem; font-size: clamp(1.3rem, 2.4vw, 1.7rem); color: var(--color-blanco); }
+.hoy-estado { margin-top: 1.1rem; padding: 0.45rem 0.9rem; border-radius: 999px; background: rgb(246 231 207 / 0.08); border: 1px solid rgb(246 231 207 / 0.2); font-size: 0.92rem; color: var(--color-marfil); }
+.hoy-estado .punto-estado { background: rgb(246 231 207 / 0.5); }
+.hoy-estado[data-abierto="true"] .punto-estado { background: #8cc063; }
+.hoy-nota { margin-top: 0.9rem; max-width: 26rem; font-size: 0.95rem; color: rgb(246 231 207 / 0.8); }
+
+.hoy-turnos { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .hoy-turnos { grid-template-columns: 1fr 1fr; } }
+.hoy-turno {
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+  padding: 1.25rem 1.25rem 1.35rem;
+  border-radius: 18px;
+  background: rgb(246 231 207 / 0.06);
+  border: 1px solid rgb(246 231 207 / 0.18);
+}
+.hoy-turno.es-ahora { background: rgb(224 170 47 / 0.1); border-color: rgb(224 170 47 / 0.55); }
+.hoy-turno.apagado { opacity: 0.6; }
+.hoy-turno-cabeza { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.hoy-turno-nombre { font-size: 1.85rem; line-height: 1; color: var(--color-blanco); }
+.hoy-turno-ahora { padding: 0.2rem 0.55rem; border-radius: 6px; background: var(--color-maiz); color: var(--color-carbon); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+.hoy-turno-horas { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--color-marfil); }
+/* Medidor de sitio: tres tramos en maíz */
+.hoy-medidor { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.3rem; margin-top: 0.35rem; }
+.hoy-medidor > span { height: 0.4rem; border-radius: 999px; background: rgb(246 231 207 / 0.18); }
+.hoy-medidor > span.lleno { background: var(--color-maiz); }
+.hoy-turno-estado { font-size: 0.95rem; color: var(--color-marfil); }
+.hoy-turno-boton { margin-top: 0.4rem; width: 100%; }
+.hoy-descanso { display: grid; justify-items: start; gap: 1rem; padding: 1.5rem; border-radius: 18px; border: 1px dashed rgb(246 231 207 / 0.35); }
+.hoy-descanso-texto { font-size: 1.15rem; font-weight: 700; color: var(--color-blanco); }

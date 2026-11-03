@@ -1,0 +1,18 @@
+# El plan gratuito de Render apaga la API tras 15 minutos sin visitas y tarda en volver; mientras tanto
+# la web caería en el modo demostración. Esta tarea la consulta cada 10 minutos para mantenerla despierta.
+# Configura la variable del repositorio API_URL (Settings → Secrets and variables → Actions → Variables),
+# por ejemplo https://algarrobo-api.onrender.com
+name: Mantener la API despierta
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  despertar:
+    runs-on: ubuntu-latest
+    if: ${{ vars.API_URL != '' }}
+    steps:
+      - name: Consultar la configuración pública
+        run: curl --silent --show-error --fail --max-time 90 "${{ vars.API_URL }}/api/v1/configuracion" > /dev/null

@@ -1,0 +1,23 @@
+      <!-- HOY: banda carbón con el estado del local y las mesas que quedan por turno -->
+      <section aria-labelledby="titulo-hoy" class="bg-carbon text-marfil">
+        <div class="mx-auto max-w-7xl px-4 sm:px-8 py-12 lg:py-14" data-pizarra>
+          <div class="grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-12">
+            <div class="lg:col-span-5" data-revelar>
+              <h2 id="titulo-hoy" class="display hoy-fecha">
+                <span class="hoy-fecha-dia" data-pizarra-dia>Hoy</span>
+                <span class="hoy-fecha-resto" data-pizarra-fecha></span>
+              </h2>
+              <p class="estado-local hoy-estado" data-estado-local>
+                <span class="punto-estado" aria-hidden="true"></span>
+                <span data-estado-local-texto>Revisando el horario</span>
+              </p>
+              <p class="hoy-nota" data-pizarra-nota></p>
+            </div>
+            <div class="lg:col-span-7" data-revelar>
+              <div class="hoy-turnos" data-pizarra-turnos aria-live="polite">
+                <p class="text-marfil cargando">Contando mesas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

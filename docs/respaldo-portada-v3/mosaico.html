@@ -1,0 +1,77 @@
+      <!-- PORTADA: un mosaico de cuatro piezas. El titular, el plato de la casa girando despacio,
+           el estado de hoy (en vivo) y la carta en abanico. Sin foto de fondo ni franja debajo. -->
+      <section id="inicio" aria-labelledby="titulo-inicio" class="bento-portada">
+        <div class="mx-auto max-w-7xl px-4 sm:px-8 pt-5 pb-12 lg:pt-7 lg:pb-16">
+          <div class="bento">
+            <div class="bento-pieza bento-titular" style="--i: 0">
+              <svg class="bento-marca" viewBox="0 0 40 40" aria-hidden="true"><use href="#marca" /></svg>
+              <h1 id="titulo-inicio" data-titular class="display bento-titulo">
+                <span class="block">El sabor del norte peruano,</span>
+                <span class="block text-aji">a fuego de leña</span>
+              </h1>
+              <p class="bento-propuesta" data-inicio-datos>
+                Cabrito a la norteña, arroz con pato a la chiclayana y ceviche de mero con ají limo. Recetas de Lambayeque y Piura, en Barranco.
+              </p>
+              <div class="mt-7 flex flex-wrap gap-3" data-inicio-datos>
+                <a href="#reservas" class="btn btn-primario">
+                  Reservar mesa
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                </a>
+                <a href="#carta" class="btn btn-linea">Ver la carta</a>
+              </div>
+            </div>
+
+            <figure class="bento-pieza bento-plato" style="--i: 1">
+              <div class="bento-plato-giro">
+                <img
+                  src="assets/img/portada/l/seco-de-cabrito-chiclayo.webp"
+                  srcset="assets/img/portada/m/seco-de-cabrito-chiclayo.webp 640w, assets/img/portada/l/seco-de-cabrito-chiclayo.webp 1280w"
+                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 82vw"
+                  width="1280"
+                  height="1282"
+                  alt="Seco de cabrito con frejoles, arroz y sarza de cebolla, visto desde arriba."
+                  fetchpriority="high"
+                />
+              </div>
+              <figcaption class="bento-plato-pie">
+                <span>El plato de la casa</span>
+                Seco de cabrito
+              </figcaption>
+            </figure>
+
+            <div class="bento-pieza bento-hoy" style="--i: 2">
+              <p class="estado-local bento-estado" data-estado-local>
+                <span class="punto-estado" aria-hidden="true"></span>
+                <span data-estado-local-texto>Barranco, Lima</span>
+              </p>
+              <p class="bento-hoy-titulo display">Te esperamos en Barranco</p>
+              <dl class="bento-horario">
+                <div><dt>Almuerzo</dt><dd>12:00–16:30</dd></div>
+                <div><dt>Cena</dt><dd>19:00–23:00</dd></div>
+                <div><dt>Lunes</dt><dd>Descansamos</dd></div>
+              </dl>
+              <a href="#contacto" class="bento-enlace">
+                Jr. Algarrobal 214 · Cómo llegar
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </a>
+            </div>
+
+            <a href="#carta" class="bento-pieza bento-carta" style="--i: 3">
+              <span class="bento-abanico" aria-hidden="true">
+                <img src="assets/img/portada/m/ceviche-rosa-nautica.webp" alt="" />
+                <img src="assets/img/platos/m/arroz-con-pato-plato.webp" alt="" />
+                <img src="assets/img/platos/m/lomo-saltado.webp" alt="" />
+                <img src="assets/img/platos/m/causa-limena.webp" alt="" />
+                <img src="assets/img/platos/m/king-kong.webp" alt="" />
+              </span>
+              <span class="bento-carta-numero display" data-carta-total>28</span>
+              <span class="bento-carta-texto">platos del norte y de todo el Perú</span>
+              <span class="bento-carta-ir">
+                Ver la carta
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+

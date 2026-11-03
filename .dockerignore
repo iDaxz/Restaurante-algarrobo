@@ -1,0 +1,14 @@
+.git
+.claude
+.impeccable
+.metals
+.vscode
+node_modules
+docs
+tests
+src
+scripts
+backend/target
+backend/config/local.properties
+.env
+*.md

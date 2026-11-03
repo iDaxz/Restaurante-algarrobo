@@ -1,0 +1,47 @@
+/* Menú móvil: persiana carbón que baja desde arriba; los enlaces llegan en horizontal, como el titular. */
+.menu-movil {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow-y: auto;
+  background: var(--color-carbon);
+  color: var(--color-marfil);
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 380ms var(--ease-salida);
+}
+.menu-movil.abierto { clip-path: inset(0 0 0 0); }
+.menu-enlace {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 1rem;
+  align-items: center;
+  padding: 0.9rem 0;
+  border-bottom: 2px solid rgb(246 231 207 / 0.14);
+  text-decoration: none;
+}
+.menu-foto {
+  grid-row: span 2;
+  width: 4.5rem;
+  height: 3rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-aji);
+}
+.menu-foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.menu-nombre { font-family: var(--font-display); font-size: clamp(2rem, 9vw, 2.75rem); line-height: 1.05; }
+.menu-nota { font-size: 0.9rem; color: rgb(246 231 207 / 0.75); }
+.menu-enlace:hover .menu-nombre, .menu-enlace:focus-visible .menu-nombre { color: var(--color-maiz); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .menu-movil li, .menu-movil .menu-pie {
+    opacity: 0;
+    transform: translateX(-1.5rem);
+    transition: opacity 420ms var(--ease-salida), transform 520ms var(--ease-salida);
+  }
+  .menu-movil.abierto li, .menu-movil.abierto .menu-pie {
+    opacity: 1;
+    transform: none;
+    transition-delay: calc(120ms + var(--i, 0) * 55ms);
+  }
+}

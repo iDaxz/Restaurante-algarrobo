@@ -1,0 +1,133 @@
+          <button
+            type="button"
+            class="lg:hidden relative grid place-items-center w-11 h-11 rounded-[10px] border-2 border-carbon/30 text-carbon"
+            aria-expanded="false"
+            aria-controls="menu-movil"
+            aria-label="Abrir menú"
+            data-abrir-menu
+          >
+            <svg
+              class="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M4 7h16M4 12h16M4 17h10" />
+            </svg>
+            <span class="aviso-menu" hidden data-aviso-menu></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Menú móvil: persiana carbón que baja sobre la página -->
+    <div
+      id="menu-movil"
+      class="menu-movil lg:hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Menú"
+      hidden
+      data-menu-movil
+    >
+      <div class="relative h-full flex flex-col px-4 sm:px-8">
+        <div class="h-[4.5rem] flex items-center justify-between">
+          <span class="display text-[1.5rem] text-marfil">Algarrobo</span>
+          <button
+            type="button"
+            class="inline-flex items-center gap-2 min-h-11 px-3 rounded-[10px] border-2 border-marfil/40 font-bold text-marfil"
+            data-cerrar-menu
+          >
+            Cerrar
+            <svg
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </div>
+        <nav aria-label="Principal (móvil)" class="mt-8 sm:mt-12">
+          <ul class="grid">
+            <li style="--i: 0">
+              <a class="menu-enlace" href="#carta"
+                ><span class="menu-foto" aria-hidden="true"
+                  ><img
+                    src="assets/img/platos/ceviche-de-mero.jpg"
+                    alt=""
+                    loading="lazy" /></span
+                ><span class="menu-nombre">Carta</span
+                ><span class="menu-nota">18 platos del norte</span></a
+              >
+            </li>
+            <li style="--i: 1">
+              <a class="menu-enlace" href="#reservas"
+                ><span class="menu-foto" aria-hidden="true"
+                  ><img
+                    src="assets/img/platos/chicha-de-jora.jpg"
+                    alt=""
+                    loading="lazy" /></span
+                ><span class="menu-nombre">Reservas</span
+                ><span class="menu-nota">Turnos de 90 minutos</span></a
+              >
+            </li>
+            <li style="--i: 2">
+              <a class="menu-enlace" href="#nosotros"
+                ><span class="menu-foto" aria-hidden="true"
+                  ><img
+                    src="assets/img/platos/seco-de-cabrito.jpg"
+                    alt=""
+                    loading="lazy" /></span
+                ><span class="menu-nombre">Nosotros</span
+                ><span class="menu-nota">Una cocina de Monsefú</span></a
+              >
+            </li>
+            <li style="--i: 3">
+              <a class="menu-enlace" href="#contacto"
+                ><span class="menu-foto" aria-hidden="true"
+                  ><img
+                    src="assets/img/platos/bosque-de-pomac.jpg"
+                    alt=""
+                    loading="lazy" /></span
+                ><span class="menu-nombre">Contacto</span
+                ><span class="menu-nota">Barranco, Lima</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="menu-pie mt-auto mb-8 pt-6 border-t-2 border-marfil/15 grid grid-cols-2 gap-x-6 gap-y-4 text-[0.95rem]"
+          style="--i: 4"
+        >
+          <div>
+            <p class="text-maiz font-bold">Almuerzo</p>
+            <p class="font-semibold tabular-nums">12:00 – 16:30</p>
+          </div>
+          <div>
+            <p class="text-maiz font-bold">Cena</p>
+            <p class="font-semibold tabular-nums">19:00 – 23:00</p>
+          </div>
+          <a href="#reservas" class="col-span-2 btn btn-maiz" data-cerrar-al-ir
+            >Reservar mesa</a
+          >
+          <a
+            href="#mis-reservas"
+            class="col-span-2 btn btn-linea-claro"
+            hidden
+            data-enlace-mis-reservas
+            >Mis reservas <span data-enlace-mis-reservas-num></span></a
+          >
+          <p class="col-span-2 text-marfil/75 text-[0.88rem]">
+            +51 900 000 000 · Jr. Algarrobal 214, Barranco (datos de
+            demostración)
+          </p>
+        </div>
+      </div>

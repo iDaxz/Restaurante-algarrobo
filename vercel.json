@@ -5,7 +5,7 @@
   "outputDirectory": ".",
   "cleanUrls": false,
   "rewrites": [
-    { "source": "/api/:ruta*", "destination": "https://ALGARROBO-API.onrender.com/api/:ruta*" },
+    { "source": "/api/:ruta*", "destination": "https://restaurante-algarrobo.onrender.com/api/:ruta*" },
     { "source": "/admin", "destination": "/admin.html" }
   ],
   "headers": [

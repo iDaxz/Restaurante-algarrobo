@@ -1735,7 +1735,7 @@ body[data-menu-abierto] .cabecera { background: var(--color-marfil-luz); border-
 /* ---------- Plano para elegir mesa (paso 4 de la reserva) ----------
    Como las butacas de un cine: el piso dibujado con sus zonas y referencias, y cada mesa con sus
    sillas. Las medidas van en cqw del lienzo para que todo el plano escale junto. */
-.plano { display: grid; gap: 0.9rem; }
+.plano-reserva { display: grid; gap: 0.9rem; }
 .plano-pisos { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .plano-piso { min-height: 2.75rem; padding: 0.4rem 1rem; border-radius: 999px; border: 2px solid var(--color-borde); background: var(--color-blanco); font-weight: 800; color: var(--color-carbon); transition: border-color 160ms, background-color 160ms, color 160ms; }
 .plano-piso:hover { border-color: var(--color-carbon); }
@@ -1758,7 +1758,7 @@ body[data-menu-abierto] .cabecera { background: var(--color-marfil-luz); border-
 .plano-ref--macetas { background: rgb(74 90 50 / 0.18); }
 
 /* Mesas: el botón es la mesa; las sillas, puntos alrededor */
-.plano-mesas { position: absolute; inset: 0; }
+.plano-reserva-mesas { position: absolute; inset: 0; }
 .plano-mesa { position: absolute; translate: -50% -50%; display: grid; place-items: center; width: var(--ancho); height: var(--alto); min-width: 2.75rem; min-height: 2.75rem; border-radius: 10px; border: 2px solid var(--color-carbon); background: var(--color-blanco); color: var(--color-carbon); font-weight: 900; font-size: max(0.8rem, 2cqw); cursor: pointer; transition: background-color 160ms, transform 200ms var(--ease-salida), box-shadow 160ms; }
 .plano-mesa--2 { --ancho: 8.5cqw; --alto: 8.5cqw; border-radius: 999px; }
 .plano-mesa--4 { --ancho: 11cqw; --alto: 11cqw; }

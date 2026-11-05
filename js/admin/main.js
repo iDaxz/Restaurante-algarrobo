@@ -269,9 +269,10 @@ function pintarTareas(reservas) {
         type: 'button', class: `btn ${ACCIONES[a].clase} btn-chico`,
         onclick: (e) => ejecutar(r.codigo, a, null, e.currentTarget),
       }, ACCIONES[a].texto)))))));
-  caja.replaceChildren(
+  caja.replaceChildren(...[
     porConfirmar.length ? grupo('Confirmar reservas nuevas', 'Revisa los datos y confírmalas: el cliente recibe el aviso. Si algo no cuadra, ábrela y cancélala.', porConfirmar, ['confirmar']) : null,
     porMarcar.length ? grupo('¿Vinieron?', 'Ya pasó su hora de llegada. Marca si el cliente llegó o no vino.', porMarcar, ['completar', 'no-asistio']) : null,
+  ].filter(Boolean)
   );
 }
 

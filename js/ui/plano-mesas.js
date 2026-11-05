@@ -33,7 +33,7 @@ export function crearPlano({ alElegir, alDejarALaCasa }) {
     [['libre', 'Libre'], ['elegida', 'Tu mesa'], ['ocupada', 'Ocupada'], ['no-sirve', 'Otro tamaño']]
       .map(([e, t]) => h('li', {}, h('span', { class: `plano-muestra plano-muestra--${e}` }), t)));
 
-  const el = h('div', { class: 'plano' }, pestanas, lienzo, otras, leyenda, h('div', { class: 'plano-pie' }, resumen, casa), avisoEl);
+  const el = h('div', { class: 'plano-reserva' }, pestanas, lienzo, otras, leyenda, h('div', { class: 'plano-pie' }, resumen, casa), avisoEl);
 
   function botonMesa(m, estado) {
     const u = ubicacionDe(m.id);
@@ -78,7 +78,7 @@ export function crearPlano({ alElegir, alDejarALaCasa }) {
         h('span', {}, z.nombre))),
       ...p.referencias.map((r) => h('div', { class: `plano-ref plano-ref--${r.tipo}`, 'aria-hidden': 'true', style: `left:${r.x}%;top:${r.y}%;width:${r.ancho}%;height:${r.alto}%` },
         h('span', {}, r.texto))),
-      h('div', { class: 'plano-mesas', role: 'group', 'aria-label': `Mesas del ${p.nombre.toLowerCase()}` },
+      h('div', { class: 'plano-reserva-mesas', role: 'group', 'aria-label': `Mesas del ${p.nombre.toLowerCase()}` },
         mesas.filter((m) => UBICACION_MESAS[m.id]?.piso === piso).map((m) => botonMesa(m, estadoDe(m)))));
     // Mesas que el administrador agregó y aún no están dibujadas en el plano.
     const sueltas = mesas.filter((m) => !UBICACION_MESAS[m.id]);

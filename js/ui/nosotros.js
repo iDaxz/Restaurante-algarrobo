@@ -56,6 +56,8 @@ function iniciarCamino() {
     fondo.setAttribute('d', d);
     recorrido.setAttribute('d', d);
     largo = recorrido.getTotalLength();
+    // Con la sección aún sin medidas el camino queda vacío: no hay nada que muestrear todavía.
+    if (!largo) { muestras = []; llegadas = puntos.map(() => Infinity); return; }
     recorrido.style.strokeDasharray = `${largo}`;
     muestras = Array.from({ length: 241 }, (_, i) => {
       const l = (largo * i) / 240;
@@ -75,6 +77,7 @@ function iniciarCamino() {
   }
 
   function avanzar() {
+    if (!largo) return;
     if (reducido) {
       recorrido.style.strokeDashoffset = '0';
       return;

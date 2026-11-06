@@ -1,0 +1,1322 @@
+<!doctype html>
+<html lang="es-PE">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Algarrobo · Cocina Norteña en Barranco (demo)</title>
+    <meta
+      name="description"
+      content="Restaurante ficticio de cocina norteña peruana: carta con precios y reservas de mesa por turnos. Proyecto de portafolio; las reservas son de demostración."
+    />
+    <meta name="theme-color" content="#211E1A" />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="assets/fonts/calistoga-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/archivo-latin-wdth-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="js/arranque.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body class="min-h-dvh">
+    <a
+      href="#contenido"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-maiz focus:text-carbon focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold"
+      >Saltar al contenido</a
+    >
+    <aside aria-label="Aviso" class="bg-carbon text-marfil/85 text-[0.84rem] leading-snug text-center px-4 py-1.5">
+      <p>
+        <span class="font-extrabold text-marfil">Restaurante Algarrobo</span>
+        Con una trayectoria en años, compartiendo cultura y sabores.
+      </p>
+    </aside>
+
+    <!-- Cabecera -->
+    <header
+      class="cabecera sticky top-0 z-40 bg-marfil-luz/95 text-carbon backdrop-blur-[6px]"
+      data-cabecera
+    >
+      <div
+        class="mx-auto max-w-7xl px-4 sm:px-8 h-[4.5rem] flex items-center gap-3 sm:gap-6"
+      >
+        <a
+          href="#inicio"
+          class="flex items-center gap-2 min-[400px]:gap-3 no-underline shrink-0"
+          aria-label="Algarrobo Cocina norteña, ir al inicio"
+        >
+          <svg class="w-8 h-8 min-[360px]:w-9 min-[360px]:h-9 min-[400px]:w-10 min-[400px]:h-10" viewBox="0 0 40 40" aria-hidden="true">
+            <use href="#marca" />
+          </svg>
+          <span class="leading-none">
+            <span class="display block text-[1.2rem] min-[360px]:text-[1.4rem] min-[400px]:text-[1.6rem] text-carbon"
+              >Algarrobo</span
+            >
+            <span
+              class="block text-[0.55rem] min-[360px]:text-[0.62rem] min-[400px]:text-[0.7rem] font-bold tracking-[0.1em] min-[400px]:tracking-[0.12em] uppercase text-aji mt-0.5"
+              >Cocina norteña</span
+            >
+          </span>
+        </a>
+
+        <nav aria-label="Principal" class="hidden lg:block ml-auto">
+          <ul class="flex items-center gap-7 text-[1rem]">
+            <li><a class="enlace-nav" href="#carta">Carta</a></li>
+            <li><a class="enlace-nav" href="#reservas">Reservas</a></li>
+            <li><a class="enlace-nav" href="#nosotros">Nosotros</a></li>
+            <li><a class="enlace-nav" href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="ml-auto lg:ml-0 flex items-center gap-2 min-[400px]:gap-3">
+          <a
+            href="tel:+51900000000"
+            class="hidden xl:inline-flex items-center gap-2 text-[0.95rem] font-semibold text-carbon-suave no-underline hover:text-aji mr-2"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"
+              />
+            </svg>
+            +51 900 000 000
+            <span class="sr-only">(teléfono de demostración)</span>
+          </a>
+          <button
+            type="button"
+            class="boton-mis-reservas"
+            aria-haspopup="dialog"
+            aria-controls="mis-reservas"
+            hidden
+            data-abrir-mis-reservas
+          >
+            <svg
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"
+              />
+              <path d="M10 5v12" stroke-dasharray="2 2.5" />
+            </svg>
+            <span class="hidden md:inline">Mis reservas</span>
+            <span class="sr-only md:hidden">Mis reservas</span>
+            <span class="boton-mis-reservas-num" data-mis-reservas-num></span>
+          </button>
+          <a href="#reservas" class="btn btn-primario btn-chico max-sm:!px-3.5"
+            ><span>Reservar<span class="hidden sm:inline"> mesa</span></span></a
+          >
+          <button
+            type="button"
+            class="boton-menu lg:hidden"
+            aria-expanded="false"
+            aria-controls="menu-movil"
+            aria-label="Abrir menú"
+            data-abrir-menu
+          >
+            <span class="boton-menu-lineas" aria-hidden="true"
+              ><span></span><span></span><span></span
+            ></span>
+            <span class="aviso-menu" hidden data-aviso-menu></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Menú móvil: hoja clara que baja bajo la cabecera; la hamburguesa se vuelve una X -->
+    <div
+      id="menu-movil"
+      class="menu-movil lg:hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Menú"
+      tabindex="-1"
+      hidden
+      data-menu-movil
+    >
+      <div class="menu-hoja">
+        <p class="estado-local menu-estado" style="--i: 0" data-estado-local>
+          <span class="punto-estado" aria-hidden="true"></span>
+          <span data-estado-local-texto>Barranco, Lima</span>
+        </p>
+        <nav aria-label="Principal (móvil)">
+          <ul class="menu-lista">
+            <li style="--i: 1">
+              <a class="menu-enlace" href="#carta" data-seccion="carta">
+                <span class="menu-enlace-texto"
+                  ><span class="menu-nombre">Carta</span
+                  ><span class="menu-nota">Entradas, fondos y postres</span></span
+                >
+                <span class="menu-aqui">Estás aquí</span>
+                <svg class="menu-flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </a>
+            </li>
+            <li style="--i: 2">
+              <a class="menu-enlace" href="#reservas" data-seccion="reservas">
+                <span class="menu-enlace-texto"
+                  ><span class="menu-nombre">Reservas</span
+                  ><span class="menu-nota">Turnos de 90 minutos</span></span
+                >
+                <span class="menu-aqui">Estás aquí</span>
+                <svg class="menu-flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </a>
+            </li>
+            <li style="--i: 3">
+              <a class="menu-enlace" href="#nosotros" data-seccion="nosotros">
+                <span class="menu-enlace-texto"
+                  ><span class="menu-nombre">Nosotros</span
+                  ><span class="menu-nota">Una cocina de Monsefú</span></span
+                >
+                <span class="menu-aqui">Estás aquí</span>
+                <svg class="menu-flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </a>
+            </li>
+            <li style="--i: 4">
+              <a class="menu-enlace" href="#contacto" data-seccion="contacto">
+                <span class="menu-enlace-texto"
+                  ><span class="menu-nombre">Contacto</span
+                  ><span class="menu-nota">Barranco, Lima</span></span
+                >
+                <span class="menu-aqui">Estás aquí</span>
+                <svg class="menu-flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-atajos" style="--i: 5">
+          <a class="menu-atajo" href="tel:+51900000000">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg>
+            <span class="menu-atajo-nombre">Llamar</span>
+            <span class="menu-atajo-nota">+51 900 000 000</span>
+          </a>
+          <a class="menu-atajo" href="#contacto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /></svg>
+            <span class="menu-atajo-nombre">Cómo llegar</span>
+            <span class="menu-atajo-nota">Jr. Algarrobal 214</span>
+          </a>
+          <a class="menu-atajo menu-atajo--ancho" href="#mis-reservas" hidden data-enlace-mis-reservas>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z" /><path d="M10 5v12" stroke-dasharray="2 2.5" /></svg>
+            <span class="menu-atajo-nombre">Mis reservas <span data-enlace-mis-reservas-num></span></span>
+          </a>
+        </div>
+        <div class="menu-pie" style="--i: 6">
+          <a href="#reservas" class="btn btn-primario w-full">Reservar mesa</a>
+          <p class="menu-horario">
+            Almuerzo 12:00–16:30 · Cena 19:00–23:00 · Lunes cerrado
+          </p>
+          <p class="menu-demo">Teléfono y dirección de demostración.</p>
+        </div>
+      </div>
+    </div>
+
+    <main id="contenido">
+      <!-- PORTADA: flyer "Recién del fogón". Una banda diagonal carbón con dos platos y dos bebidas recortados,
+           cada uno con su nombre, origen y descripción (sin precios). Al cargar: dos cápsulas se encuentran en
+           la diagonal, los platos llegan sobre ellas, las bebidas aparecen y al final los textos (CSS).
+           js/ui/portada.js mueve un poco las piezas con el mouse. Imágenes recortadas con fondo transparente en
+           assets/img/portada/ (PNG original y WebP liviano en m/). -->
+      <section id="inicio" aria-labelledby="titulo-inicio" class="flyer">
+        <div class="mx-auto max-w-7xl px-4 sm:px-8 pt-4 pb-10 lg:pt-6 lg:pb-14">
+          <div class="flyer-marco">
+          <div class="flyer-escena" data-flyer>
+            <!-- Cada plato va en la punta de su cápsula: entra con ella y siempre queda al final de la franja -->
+            <div class="flyer-banda">
+              <span class="flyer-capsula flyer-capsula--a">
+                <img class="pieza-foto pieza-plato" data-pieza style="--prof: 1.2" src="assets/img/portada/m/plato-ceviche.webp" width="533" height="360" alt="Ceviche de pescado en un bol negro, con camote, choclo, cancha, cebolla morada y ají." fetchpriority="high" />
+              </span>
+              <span class="flyer-capsula flyer-capsula--b">
+                <img class="pieza-foto pieza-plato" data-pieza style="--prof: 1" src="assets/img/portada/m/plato-seco-de-cabrito.webp" width="532" height="359" alt="Seco de cabrito con frejoles, arroz y sarza de cebolla en un plato blanco." />
+              </span>
+            </div>
+            <svg class="flyer-marca" viewBox="0 0 40 40" aria-hidden="true"><use href="#marca" /></svg>
+
+            <div class="flyer-cabeza">
+              <h1 id="titulo-inicio" class="flyer-titulo"><span>Recién</span> <span>del fogón</span></h1>
+              <p class="flyer-bajada">Cocina del norte peruano a fuego de leña, en Barranco.</p>
+            </div>
+
+            <ul class="flyer-piezas">
+              <li class="pieza pieza--ceviche" style="--i: 0">
+                <div class="pieza-texto pieza-texto--banda">
+                  <p class="pieza-origen">Costa norte</p>
+                  <p class="pieza-nombre">Ceviche</p>
+                  <p class="pieza-desc">Pescado del día en limón y ají limo.</p>
+                </div>
+              </li>
+              <li class="pieza pieza--maracuya" style="--i: 1">
+                <img class="pieza-foto" data-pieza src="assets/img/portada/m/bebida-maracuya.webp" width="233" height="464" alt="Vaso de frozen de maracuyá con semillas y hierbabuena." />
+                <div class="pieza-texto">
+                  <p class="pieza-origen">Para refrescar</p>
+                  <p class="pieza-nombre">Frozen de maracuyá</p>
+                  <p class="pieza-desc">Maracuyá con hielo frappé y un toque de hierbabuena.</p>
+                </div>
+              </li>
+              <li class="pieza pieza--chicha" style="--i: 2">
+                <img class="pieza-foto" data-pieza src="assets/img/portada/m/bebida-chicha-morada.webp" width="306" height="518" alt="Vaso de chicha morada con hielo, piña y canela." />
+                <div class="pieza-texto">
+                  <p class="pieza-origen">Todo el Perú</p>
+                  <p class="pieza-nombre">Chicha morada</p>
+                  <p class="pieza-desc">Maíz morado con piña, canela y clavo, bien helada.</p>
+                </div>
+              </li>
+              <li class="pieza pieza--seco" style="--i: 3">
+                <div class="pieza-texto pieza-texto--banda">
+                  <p class="pieza-origen">Lambayeque</p>
+                  <p class="pieza-nombre">Seco de cabrito</p>
+                  <p class="pieza-desc">Macerado en chicha de jora, a fuego lento en leña de algarrobo.</p>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+          <div class="flyer-pie">
+            <ul class="flyer-sellos" aria-label="Lo que nos distingue">
+              <li><span class="flyer-sello-cifra">Leña</span><span class="flyer-sello-texto">de algarrobo en el fogón</span></li>
+              <li><span class="flyer-sello-cifra">Jora</span><span class="flyer-sello-texto">chicha hecha en casa</span></li>
+              <li><span class="flyer-sello-cifra">14</span><span class="flyer-sello-texto">mesas en Barranco</span></li>
+            </ul>
+            <p class="flyer-lugar"><strong>Algarrobo</strong> · Jr. Algarrobal 214, Barranco</p>
+            <p class="flyer-horario">Martes a domingo · 12:00–16:30 y 19:00–23:00</p>
+            <div class="flyer-acciones">
+              <a href="#reservas" class="btn btn-primario">
+                Reservar mesa
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </a>
+              <a href="#carta" class="btn btn-linea">Ver la carta</a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANTOJO: eliges un antojo y la casa sugiere un plato (sin precios: están en la carta) -->
+      <section aria-labelledby="titulo-antojo" class="antojo">
+        <div class="mx-auto max-w-7xl px-4 sm:px-8 pt-16 pb-16 lg:pt-24 lg:pb-24 antojo-rejilla" data-antojo>
+          <div data-revelar>
+            <h2 id="titulo-antojo" class="display antojo-titulo">
+              ¿Qué se te <span class="text-aji">antoja</span>?
+            </h2>
+            <p class="antojo-intro">Elige un antojo y te decimos qué pedir.</p>
+            <div class="antojo-opciones" role="group" aria-label="Antojos" data-antojo-opciones></div>
+          </div>
+          <div class="antojo-plato" data-revelar>
+            <div class="antojo-mantel" aria-hidden="true"></div>
+            <img class="antojo-foto" data-antojo-foto alt="" width="480" height="480" />
+          </div>
+          <div class="antojo-ficha" aria-live="polite" data-antojo-ficha data-revelar>
+            <p class="antojo-origen" data-antojo-origen></p>
+            <h3 class="display antojo-nombre" data-antojo-nombre></h3>
+            <p class="antojo-descripcion" data-antojo-descripcion></p>
+            <div class="antojo-acciones">
+              <button type="button" class="btn btn-linea" data-antojo-historia>Conocer su historia</button>
+              <button type="button" class="antojo-otra" data-antojo-otra>Otra idea</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARTA -->
+      <section id="carta" aria-labelledby="titulo-carta" class="bg-marfil">
+        <div class="mx-auto max-w-7xl px-4 sm:px-8 pt-16 pb-16 lg:pt-20 lg:pb-24">
+          <div class="carta-cabeza" data-revelar>
+            <h2
+              id="titulo-carta"
+              class="display text-[clamp(3rem,6.5vw,5rem)] text-aji"
+            >
+              La carta
+            </h2>
+            <p class="carta-intro">
+              Cocina de fogón del norte peruano. Precios en soles; toca un
+              plato para conocer su historia.
+            </p>
+          </div>
+          <div class="carta-mesa">
+            <aside class="carta-lado" aria-label="Filtros de la carta">
+              <div class="carta-lado-fijo">
+                <div class="carta-buscar">
+                  <label for="carta-buscar" class="sr-only">Buscar un plato</label>
+                  <svg class="carta-buscar-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                  <input id="carta-buscar" type="search" placeholder="Buscar un plato" autocomplete="off" data-carta-buscar />
+                </div>
+                <div
+                  class="filtros-carta"
+                  role="group"
+                  aria-label="Filtrar la carta por categoría"
+                  data-filtros
+                ></div>
+                <label class="carta-solo-hoy">
+                  <input type="checkbox" data-carta-disponibles />
+                  <span>Ocultar agotados de hoy</span>
+                </label>
+                <div class="carta-invita">
+                  <p class="carta-invita-titulo display">¿Ya se te antojó algo?</p>
+                  <p class="carta-invita-texto">Aparta tu mesa y te lo servimos recién salido del fogón.</p>
+                  <a href="#reservas" class="btn btn-maiz carta-invita-boton">Reservar mesa</a>
+                </div>
+              </div>
+            </aside>
+            <div class="min-w-0">
+              <p class="carta-resultado" data-carta-resultado aria-live="polite"></p>
+              <div class="carta-rejilla" data-carta></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESERVAS: bloque carbón -->
+      <section
+        id="reservas"
+        aria-labelledby="titulo-reservas"
+        class="bg-carbon text-marfil"
+      >
+        <div
+          class="mx-auto max-w-7xl px-4 sm:px-8 py-16 lg:py-24 grid gap-10 lg:gap-12 lg:grid-cols-12"
+        >
+          <div class="lg:col-span-4">
+            <div class="lg:sticky lg:top-28" data-revelar>
+              <h2
+                id="titulo-reservas"
+                class="display text-[clamp(2.6rem,5vw,4rem)] text-blanco"
+              >
+                Reserva tu <span class="text-maiz">mesa</span>
+              </h2>
+              <p class="mt-5 text-[1.1rem] text-marfil">
+                Elige cuántos vienen, el día y la hora. Solo verás horarios en
+                los que de verdad queda una mesa para tu grupo.
+              </p>
+              <dl class="mt-8 grid gap-4 text-[0.98rem]">
+                <div>
+                  <dt class="font-bold text-maiz marcador">Turnos</dt>
+                  <dd class="text-marfil">
+                    Almuerzo de 12:00 a 16:30 y cena de 19:00 a 23:00. Lunes
+                    cerrado.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-bold text-maiz marcador">Tu mesa</dt>
+                  <dd class="text-marfil">
+                    Es tuya por 90 minutos. Te la guardamos 15 minutos después
+                    de la hora.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-bold text-maiz marcador">Cambios</dt>
+                  <dd class="text-marfil">
+                    Puedes modificar o cancelar hasta 3 horas antes de llegar.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-bold text-maiz marcador">Grupos</dt>
+                  <dd class="text-marfil">
+                    Hasta 8 personas en línea. Para más, llama al
+                    <a
+                      class="underline font-bold text-blanco"
+                      href="tel:+51900000000"
+                      >+51 900 000 000</a
+                    >
+                    (demo).
+                  </dd>
+                </div>
+              </dl>
+              <p class="mt-8">
+                <a
+                  href="#gestionar"
+                  class="font-bold text-maiz underline hover:text-blanco"
+                  >¿Ya tienes una reserva? Modifícala o cancélala</a
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-8">
+            <div
+              class="bg-blanco text-carbon rounded-[16px] shadow-[var(--shadow-panel)] overflow-hidden"
+              data-reserva
+              data-revelar
+            >
+              <div
+                class="hidden px-5 sm:px-9 py-4 bg-hierbas text-blanco font-semibold flex-wrap items-center justify-between gap-3"
+                data-modo-edicion
+              >
+                <span data-modo-edicion-texto>Modificando la reserva</span>
+                <button
+                  type="button"
+                  class="underline font-semibold"
+                  data-cancelar-edicion
+                >
+                  Salir sin cambiar
+                </button>
+              </div>
+              <ol class="divide-y-2 divide-piedra">
+                <li
+                  class="paso px-5 sm:px-9 py-8"
+                  data-paso="personas"
+                  data-estado="activo"
+                >
+                  <div class="flex items-center gap-4">
+                    <span class="paso-num" aria-hidden="true">1</span>
+                    <h3
+                      class="text-[1.25rem] font-bold leading-tight"
+                      id="paso-personas"
+                    >
+                      ¿Cuántos vienen?
+                    </h3>
+                  </div>
+                  <div class="paso-cuerpo mt-5 sm:pl-[3.4rem]">
+                    <div class="flex flex-wrap items-center gap-5">
+                      <div
+                        class="flex items-center gap-4"
+                        role="group"
+                        aria-labelledby="paso-personas"
+                      >
+                        <button
+                          type="button"
+                          class="contador-btn"
+                          data-personas-menos
+                          aria-label="Una persona menos"
+                        >
+                          <svg
+                            class="w-5 h-5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.4"
+                            stroke-linecap="round"
+                            aria-hidden="true"
+                          >
+                            <path d="M5 12h14" />
+                          </svg>
+                        </button>
+                        <output
+                          class="min-w-[6rem] text-center"
+                          aria-live="polite"
+                        >
+                          <span
+                            class="display text-[2.4rem] leading-none tabular-nums text-aji"
+                            data-personas-num
+                            >2</span
+                          >
+                          <span
+                            class="block text-sm font-semibold text-carbon-suave"
+                            data-personas-texto
+                            >personas</span
+                          >
+                        </output>
+                        <button
+                          type="button"
+                          class="contador-btn"
+                          data-personas-mas
+                          aria-label="Una persona más"
+                        >
+                          <svg
+                            class="w-5 h-5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.4"
+                            stroke-linecap="round"
+                            aria-hidden="true"
+                          >
+                            <path d="M12 5v14M5 12h14" />
+                          </svg>
+                        </button>
+                      </div>
+                      <p
+                        class="text-[0.95rem] text-carbon-suave max-w-xs"
+                        data-personas-nota
+                      ></p>
+                    </div>
+                  </div>
+                </li>
+
+                <li
+                  class="paso px-5 sm:px-9 py-8"
+                  data-paso="fecha"
+                  data-estado="activo"
+                >
+                  <div class="flex items-center gap-4">
+                    <span class="paso-num" aria-hidden="true">2</span>
+                    <h3
+                      class="text-[1.25rem] font-bold leading-tight"
+                      id="paso-fecha"
+                    >
+                      ¿Qué día?
+                    </h3>
+                    <span
+                      class="ml-auto text-right font-bold text-aji hidden sm:block"
+                      data-resumen-fecha
+                    ></span>
+                  </div>
+                  <div class="paso-cuerpo mt-6 sm:pl-[3.4rem]">
+                    <div data-calendario></div>
+                  </div>
+                </li>
+
+                <li
+                  class="paso px-5 sm:px-9 py-8"
+                  data-paso="hora"
+                  data-estado="bloqueado"
+                >
+                  <div class="flex items-center gap-4">
+                    <span class="paso-num" aria-hidden="true">3</span>
+                    <h3
+                      class="text-[1.25rem] font-bold leading-tight"
+                      id="paso-hora"
+                    >
+                      ¿A qué hora llegan?
+                    </h3>
+                    <span
+                      class="ml-auto text-sm text-carbon-suave"
+                      data-paso-aviso="hora"
+                      >Primero elige un día</span
+                    >
+                  </div>
+                  <div
+                    class="paso-cuerpo mt-6 sm:pl-[3.4rem]"
+                    data-horarios
+                    aria-live="polite"
+                  ></div>
+                </li>
+
+                <li
+                  class="paso px-5 sm:px-9 py-8"
+                  data-paso="mesa"
+                  data-estado="bloqueado"
+                >
+                  <div class="flex items-center gap-4">
+                    <span class="paso-num" aria-hidden="true">4</span>
+                    <h3
+                      class="text-[1.25rem] font-bold leading-tight"
+                      id="paso-mesa"
+                    >
+                      Elige tu mesa
+                    </h3>
+                    <span
+                      class="ml-auto text-sm text-carbon-suave"
+                      data-paso-aviso="mesa"
+                      >Primero elige la hora</span
+                    >
+                  </div>
+                  <div class="paso-cuerpo mt-6 sm:pl-[3.4rem]" data-plano></div>
+                </li>
+
+                <li
+                  class="paso px-5 sm:px-9 py-8"
+                  data-paso="datos"
+                  data-estado="bloqueado"
+                >
+                  <div class="flex items-center gap-4">
+                    <span class="paso-num" aria-hidden="true">5</span>
+                    <h3
+                      class="text-[1.25rem] font-bold leading-tight"
+                      id="paso-datos"
+                    >
+                      Tus datos
+                    </h3>
+                    <span
+                      class="ml-auto text-sm text-carbon-suave"
+                      data-paso-aviso="datos"
+                      >Primero elige la hora</span
+                    >
+                  </div>
+                  <div class="paso-cuerpo mt-6 sm:pl-[3.4rem]">
+                    <form class="grid gap-5" novalidate data-form-reserva>
+                      <div class="grid gap-5 sm:grid-cols-2">
+                        <div>
+                          <label for="nombre" class="block font-bold mb-1.5"
+                            >Nombre de quien reserva</label
+                          >
+                          <input
+                            id="nombre"
+                            name="nombre"
+                            class="campo"
+                            autocomplete="name"
+                            required
+                            aria-describedby="error-nombre"
+                          />
+                          <p
+                            id="error-nombre"
+                            class="mt-1.5 text-[0.92rem] font-semibold error-msg empty:hidden"
+                            data-error="nombre"
+                          ></p>
+                        </div>
+                        <div>
+                          <label for="reserva-contacto" class="block font-bold mb-1.5"
+                            >Correo o teléfono</label
+                          >
+                          <input
+                            id="reserva-contacto"
+                            name="contacto"
+                            class="campo"
+                            autocomplete="email"
+                            inputmode="email"
+                            required
+                            aria-describedby="ayuda-contacto error-contacto"
+                            placeholder="nombre@correo.com o 987 654 321"
+                          />
+                          <p
+                            id="ayuda-contacto"
+                            class="mt-1.5 text-[0.88rem] text-carbon-suave"
+                          >
+                            Solo para enviarte el código y avisarte si algo
+                            cambia.
+                          </p>
+                          <p
+                            id="error-contacto"
+                            class="mt-1 text-[0.92rem] font-semibold error-msg empty:hidden"
+                            data-error="contacto"
+                          ></p>
+                        </div>
+                      </div>
+                      <div>
+                        <label for="comentarios" class="block font-bold mb-1.5"
+                          >Comentarios
+                          <span class="font-normal text-carbon-suave"
+                            >(opcional)</span
+                          ></label
+                        >
+                        <textarea
+                          id="comentarios"
+                          name="comentarios"
+                          rows="3"
+                          maxlength="280"
+                          class="campo resize-y"
+                          placeholder="Ej.: es un cumpleaños, preferimos mesa junto a la ventana, vamos con un coche de bebé…"
+                        ></textarea>
+                      </div>
+                      <div
+                        class="rounded-[10px] bg-marfil px-4 py-3.5 text-[0.98rem]"
+                        data-resumen-reserva
+                      ></div>
+                      <p
+                        class="retencion empty:hidden"
+                        aria-live="polite"
+                        data-retencion
+                      ></p>
+                      <p
+                        class="text-[0.95rem] font-semibold error-msg empty:hidden"
+                        role="alert"
+                        data-error-general
+                      ></p>
+                      <div class="flex flex-wrap items-center gap-4">
+                        <button
+                          type="submit"
+                          class="btn btn-primario"
+                          data-enviar
+                        >
+                          Confirmar reserva de demostración
+                        </button>
+                        <p
+                          class="text-[0.88rem] text-carbon-suave max-w-xs"
+                          data-texto-api="Se guarda en el servidor de prueba de este restaurante ficticio."
+                        >
+                          Es una demo: no se envía al restaurante.
+                        </p>
+                      </div>
+                    </form>
+                  </div>
+                </li>
+              </ol>
+              <div
+                class="hidden px-5 sm:px-9 py-9"
+                data-resultado
+                tabindex="-1"
+              ></div>
+            </div>
+
+            <div
+              id="gestionar"
+              class="mt-8 bg-blanco text-carbon rounded-[16px] px-5 sm:px-9 py-8"
+              data-revelar
+            >
+              <h3 class="display text-[1.75rem]">
+                Modificar o cancelar una reserva
+              </h3>
+              <p class="mt-2 text-carbon-suave">
+                Escribe el código que te dimos y el correo o teléfono con el que
+                reservaste.
+              </p>
+              <form
+                class="mt-5 grid gap-4 sm:grid-cols-[1fr_1.4fr_auto] sm:items-end"
+                novalidate
+                data-form-buscar
+              >
+                <div>
+                  <label for="buscar-codigo" class="block font-bold mb-1.5"
+                    >Código</label
+                  >
+                  <input
+                    id="buscar-codigo"
+                    name="codigo"
+                    class="campo uppercase tabular-nums"
+                    placeholder="ALG-XXXXX"
+                    autocomplete="off"
+                    autocapitalize="characters"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="buscar-contacto" class="block font-bold mb-1.5"
+                    >Correo o teléfono</label
+                  >
+                  <input
+                    id="buscar-contacto"
+                    name="contacto"
+                    class="campo"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-secundario !min-h-[3.1rem]"
+                  data-buscar-enviar
+                >
+                  Buscar reserva
+                </button>
+              </form>
+              <div
+                class="mt-5 empty:mt-0"
+                aria-live="polite"
+                data-gestion
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NOSOTROS: el camino de la receta. Una ruta que se dibuja al bajar y fotos que se abren al llegar a cada parada -->
+      <section id="nosotros" aria-labelledby="titulo-nosotros" class="bg-marfil">
+        <div class="mx-auto max-w-7xl px-4 sm:px-8 py-16 lg:py-24">
+          <div class="nosotros-cabeza" data-revelar>
+            <h2 id="titulo-nosotros" class="display text-[clamp(2.6rem,5vw,4rem)] text-aji">Nosotros</h2>
+            <p class="nosotros-frase display">Una cocina de Monsefú, traída a Barranco con su leña y sus tiempos.</p>
+          </div>
+          <div class="camino" data-camino>
+            <svg class="camino-trazo" aria-hidden="true" focusable="false">
+              <path class="camino-fondo" />
+              <path class="camino-recorrido" data-camino-recorrido />
+            </svg>
+            <span class="camino-viajero" aria-hidden="true" data-camino-viajero></span>
+            <ol class="paradas">
+              <li class="parada parada--izquierda" data-parada>
+                <figure class="parada-foto">
+                  <div class="parada-lente"><img src="assets/img/norte/m/monsefu.webp" srcset="assets/img/norte/m/monsefu.webp 640w, assets/img/norte/monsefu.jpg 1280w" sizes="(min-width: 900px) 17rem, 9rem" loading="lazy" alt="Plaza de Armas de Monsefú al atardecer, con la torre de la iglesia al fondo." style="object-position: 50% 60%" /></div>
+                  <figcaption>Plaza de Armas de Monsefú</figcaption>
+                </figure>
+                <div class="parada-texto">
+                  <h3 class="parada-titulo display">La receta de la abuela Rosa</h3>
+                  <p class="parada-lugar">Monsefú, Lambayeque</p>
+                  <p class="parada-relato">Los domingos, la abuela Rosa preparaba el seco de cabrito con la leña que caía de los algarrobos del camino.</p>
+                </div>
+              </li>
+              <li class="parada parada--derecha" data-parada>
+                <figure class="parada-foto">
+                  <div class="parada-lente"><img src="assets/img/norte/m/pasamayo.webp" srcset="assets/img/norte/m/pasamayo.webp 640w, assets/img/norte/pasamayo.jpg 720w" sizes="(min-width: 900px) 17rem, 9rem" loading="lazy" alt="Arenales y mar vistos desde la ventana de un bus en la Panamericana Norte." style="object-position: 35% 62%" /></div>
+                  <figcaption>Pasamayo, desde la ventana del bus</figcaption>
+                </figure>
+                <div class="parada-texto">
+                  <h3 class="parada-titulo display">Unos 780 kilómetros de costa</h3>
+                  <p class="parada-lugar">Panamericana Norte</p>
+                  <p class="parada-relato">La receta bajó a Lima en un cuaderno, entre arenales y mar, con la leña y la chicha de jora como equipaje.</p>
+                </div>
+              </li>
+              <li class="parada parada--izquierda" data-parada>
+                <figure class="parada-foto">
+                  <div class="parada-lente"><img src="assets/img/norte/m/bajada-de-banos.webp" srcset="assets/img/norte/m/bajada-de-banos.webp 640w, assets/img/norte/bajada-de-banos.jpg 1280w" sizes="(min-width: 900px) 17rem, 9rem" loading="lazy" alt="La Bajada de los Baños en Barranco: un camino de piedra entre casas antiguas y árboles." style="object-position: 50% 55%" /></div>
+                  <figcaption>Bajada de los Baños, Barranco</figcaption>
+                </figure>
+                <div class="parada-texto">
+                  <h3 class="parada-titulo display">Un comedor de catorce mesas</h3>
+                  <p class="parada-lugar">Barranco, 2019</p>
+                  <p class="parada-relato">Sus nietos abrieron en Barranco un comedor pequeño, con la cocina a la vista y el fogón encendido desde temprano.</p>
+                </div>
+              </li>
+            </ol>
+            <p class="camino-hoy" data-parada><span class="display">Hoy</span> Fuego lento, chicha de jora hecha en casa y una carta corta que cambia con lo que llega. Lo que se acaba, se acaba.</p>
+          </div>
+          <p class="nosotros-nota">Historia ficticia, escrita para este proyecto de portafolio. Fotos de nuestro comedor: pendientes; Algarrobo es un restaurante ficticio.</p>
+        </div>
+
+        <!-- Lo que llega del norte: una tira de fotos; la franja elegida se despliega y cuenta su historia -->
+        <div class="despensa">
+          <div class="mx-auto max-w-7xl px-4 sm:px-8 py-16 lg:py-20">
+            <div class="despensa-cabeza" data-revelar>
+              <h3 class="display despensa-titulo">Lo que llega del norte</h3>
+              <p class="despensa-intro">Seis cosas que no cambiamos por nada. Recorre la tira para conocerlas.</p>
+            </div>
+            <ul class="tira" data-tira data-revelar>
+              <li class="franja abierta" data-franja style="--i: 0">
+                <img src="assets/img/norte/m/algarrobo-arbol.webp" srcset="assets/img/norte/m/algarrobo-arbol.webp 640w, assets/img/norte/algarrobo-arbol.jpg 1280w" sizes="(min-width: 900px) 40rem, 100vw" loading="lazy" alt="Bosque de algarrobos con troncos retorcidos y sombra." style="object-position: 50% 50%" />
+                <button type="button" class="franja-boton" aria-expanded="true" aria-controls="franja-0">
+                  <span class="franja-nombre display">Leña de algarrobo</span>
+                </button>
+                <div class="franja-texto" id="franja-0">
+                  <p class="franja-origen">Piura y Lambayeque</p>
+                  <p class="franja-relato">El algarrobo crece en el bosque seco del norte. Su leña arde lento y parejo, y perfuma lo que se cocina encima.</p>
+                  <p class="franja-carta"><span>En la carta</span> Seco de cabrito · Arroz con pato</p>
+                </div>
+              </li>
+              <li class="franja" data-franja style="--i: 1">
+                <img src="assets/img/norte/m/cabras.webp" srcset="assets/img/norte/m/cabras.webp 640w, assets/img/norte/cabras.jpg 1280w" sizes="(min-width: 900px) 40rem, 100vw" loading="lazy" alt="Rebaño de cabras pastando en un campo, con cerros al fondo." style="object-position: 45% 60%" />
+                <button type="button" class="franja-boton" aria-expanded="false" aria-controls="franja-1">
+                  <span class="franja-nombre display">Cabrito de Olmos</span>
+                </button>
+                <div class="franja-texto" id="franja-1">
+                  <p class="franja-origen">Olmos, Lambayeque</p>
+                  <p class="franja-relato">Cabras criadas a campo abierto en el bosque seco lambayecano: carne tierna para guisar despacio.</p>
+                  <p class="franja-carta"><span>En la carta</span> Seco de cabrito · Cabrito con zarandaja</p>
+                </div>
+              </li>
+              <li class="franja" data-franja style="--i: 2">
+                <img src="assets/img/norte/m/zapallo-loche.webp" srcset="assets/img/norte/m/zapallo-loche.webp 640w, assets/img/norte/zapallo-loche.jpg 1280w" sizes="(min-width: 900px) 40rem, 100vw" loading="lazy" alt="Zapallos loche verdes y uno partido, anaranjado por dentro, en un mercado." style="object-position: 40% 50%" />
+                <button type="button" class="franja-boton" aria-expanded="false" aria-controls="franja-2">
+                  <span class="franja-nombre display">Zapallo loche</span>
+                </button>
+                <div class="franja-texto" id="franja-2">
+                  <p class="franja-origen">Valles de Lambayeque</p>
+                  <p class="franja-relato">Pequeño, rugoso y muy aromático; solo crece en el norte y perfuma el arroz con pato.</p>
+                  <p class="franja-carta"><span>En la carta</span> Arroz con pato · Espesado</p>
+                </div>
+              </li>
+              <li class="franja" data-franja style="--i: 3">
+                <img src="assets/img/norte/m/zarandaja.webp" srcset="assets/img/norte/m/zarandaja.webp 640w, assets/img/norte/zarandaja.jpg 1280w" sizes="(min-width: 900px) 40rem, 100vw" loading="lazy" alt="Vainas planas de zarandaja, verdes y moradas." style="object-position: 50% 50%" />
+                <button type="button" class="franja-boton" aria-expanded="false" aria-controls="franja-3">
+                  <span class="franja-nombre display">Zarandaja</span>
+                </button>
+                <div class="franja-texto" id="franja-3">
+                  <p class="franja-origen">Piura y Lambayeque</p>
+                  <p class="franja-relato">El frejol del norte: vainas planas que se desgranan para guisarlas junto al cabrito.</p>
+                  <p class="franja-carta"><span>En la carta</span> Cabrito con zarandaja</p>
+                </div>
+              </li>
+              <li class="franja" data-franja style="--i: 4">
+                <img src="assets/img/norte/m/aji-limo.webp" srcset="assets/img/norte/m/aji-limo.webp 640w, assets/img/norte/aji-limo.jpg 1280w" sizes="(min-width: 900px) 40rem, 100vw" loading="lazy" alt="Planta de ají con frutos pequeños anaranjados." style="object-position: 45% 45%" />
+                <button type="button" class="franja-boton" aria-expanded="false" aria-controls="franja-4">
+                  <span class="franja-nombre display">Ají limo</span>
+                </button>
+                <div class="franja-texto" id="franja-4">
+                  <p class="franja-origen">Costa norte</p>
+                  <p class="franja-relato">Pequeño, picante y aromático. Se pica fino sobre el ceviche y le da su golpe.</p>
+                  <p class="franja-carta"><span>En la carta</span> Ceviche · Leche de tigre</p>
+                </div>
+              </li>
+              <li class="franja" data-franja style="--i: 5">
+                <img src="assets/img/norte/m/chicha-cocinera.webp" srcset="assets/img/norte/m/chicha-cocinera.webp 640w, assets/img/norte/chicha-cocinera.jpg 1280w" sizes="(min-width: 900px) 40rem, 100vw" loading="lazy" alt="Una cocinera remueve una olla grande de chicha en una cocina de leña, entre el vapor." style="object-position: 50% 35%" />
+                <button type="button" class="franja-boton" aria-expanded="false" aria-controls="franja-5">
+                  <span class="franja-nombre display">Chicha de jora</span>
+                </button>
+                <div class="franja-texto" id="franja-5">
+                  <p class="franja-origen">Picanterías del norte</p>
+                  <p class="franja-relato">Maíz germinado, hervido y fermentado en olla grande. Macera las carnes y se sirve fresca.</p>
+                  <p class="franja-carta"><span>En la carta</span> Clarito de jora · Seco de cabrito</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO / PIE: carbón -->
+      <section
+        id="contacto"
+        aria-labelledby="titulo-contacto"
+        class="bg-carbon text-marfil"
+      >
+        <div
+          class="mx-auto max-w-7xl px-4 sm:px-8 pt-16 pb-10 grid gap-10 lg:grid-cols-12"
+        >
+          <div class="lg:col-span-5" data-revelar>
+            <h2
+              id="titulo-contacto"
+              class="display text-[clamp(2.6rem,5vw,4rem)] text-blanco"
+            >
+              Contacto
+            </h2>
+            <p class="mt-4 max-w-sm text-marfil">
+              Te esperamos en Barranco. Si vienes sin reserva, pregunta en la
+              puerta: guardamos algunas mesas para quien llega.
+            </p>
+            <a href="#reservas" class="btn btn-maiz mt-7">Reservar mesa</a>
+          </div>
+          <address
+            class="not-italic lg:col-span-3 grid gap-6 content-start"
+            data-revelar
+          >
+            <div>
+              <p
+                class="font-extrabold text-maiz uppercase text-[0.85rem] tracking-[0.06em]"
+              >
+                Dirección
+              </p>
+              <p>
+                Jr. Algarrobal 214, Barranco, Lima
+                <span class="text-marfil/80">(ficticia)</span>
+              </p>
+              <a
+                class="mt-1 inline-flex items-center gap-1.5 font-semibold underline text-blanco"
+                href="https://www.google.com/maps/search/?api=1&amp;query=Barranco%2C+Lima%2C+Per%C3%BA"
+                target="_blank"
+                rel="noopener"
+              >
+                Ver Barranco en el mapa
+                <svg
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17 17 7M8 7h9v9" />
+                </svg>
+                <span class="sr-only">(se abre en otra pestaña)</span>
+              </a>
+            </div>
+            <div>
+              <p
+                class="font-extrabold text-maiz uppercase text-[0.85rem] tracking-[0.06em]"
+              >
+                Teléfono y correo
+              </p>
+              <p>
+                <a class="underline" href="tel:+51900000000">+51 900 000 000</a
+                ><br /><a
+                  class="underline"
+                  href="mailto:reservas@algarrobo.demo"
+                  >reservas@algarrobo.demo</a
+                >
+              </p>
+              <p class="mt-1 text-[0.88rem] text-marfil/80">
+                Datos de demostración.
+              </p>
+            </div>
+          </address>
+          <div class="lg:col-span-4 grid gap-8 content-start" data-revelar>
+            <div>
+              <h3
+                class="font-extrabold text-maiz uppercase text-[0.85rem] tracking-[0.06em]"
+              >
+                Horario
+              </h3>
+              <table class="mt-2 w-full tabular-nums">
+                <tbody class="divide-y divide-marfil/15">
+                  <tr>
+                    <th scope="row" class="py-2 text-left font-normal">
+                      Almuerzo, martes a domingo
+                    </th>
+                    <td class="py-2 text-right font-bold">12:00 – 16:30</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="py-2 text-left font-normal">
+                      Cena, martes a domingo
+                    </th>
+                    <td class="py-2 text-right font-bold">19:00 – 23:00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="py-2 text-left font-normal">
+                      Lunes
+                    </th>
+                    <td class="py-2 text-right font-bold">Descansamos</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div>
+              <h3
+                class="font-extrabold text-maiz uppercase text-[0.85rem] tracking-[0.06em]"
+              >
+                Redes
+              </h3>
+              <ul class="mt-2 flex flex-wrap gap-x-5 gap-y-1 font-semibold">
+                <li>
+                  <a class="underline" href="#contacto" data-red-demo
+                    >Instagram</a
+                  >
+                </li>
+                <li>
+                  <a class="underline" href="#contacto" data-red-demo
+                    >Facebook</a
+                  >
+                </li>
+                <li>
+                  <a class="underline" href="#contacto" data-red-demo>TikTok</a>
+                </li>
+              </ul>
+              <p class="mt-2 text-[0.88rem] text-marfil/80" data-redes-nota>
+                Perfiles de demostración: no existen.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-marfil/10">
+          <div class="mx-auto max-w-7xl px-4 sm:px-8 py-6">
+            <details class="text-[0.9rem] text-marfil">
+              <summary
+                class="creditos-resumen cursor-pointer font-bold text-blanco w-max list-none inline-flex items-center gap-2"
+              >
+                Créditos de las fotografías<svg
+                  class="w-4 h-4 transition-transform"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  aria-hidden="true"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </summary>
+              <p class="mt-3 max-w-3xl">
+                Fotos de Wikimedia Commons con un mismo ajuste de color cálido.
+                Ilustran los platos; no muestran a Algarrobo, que no existe.
+              </p>
+              <ul class="mt-3 grid gap-1.5 sm:grid-cols-2" data-creditos></ul>
+            </details>
+            <p class="mt-4 text-[0.85rem] text-marfil/85">
+              © Algarrobo · Cocina Norteña. Restaurante ficticio creado como
+              proyecto de portafolio.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Ventana de detalle de un plato (js/ui/plato-detalle.js) -->
+    <dialog class="detalle" aria-labelledby="detalle-nombre" data-plato-detalle>
+      <div class="detalle-panel">
+        <figure class="detalle-media">
+          <img
+            src="assets/img/platos/m/arroz-con-pato-plato.webp"
+            srcset="assets/img/platos/m/arroz-con-pato-plato.webp 640w, assets/img/platos/arroz-con-pato-plato.jpg 1591w"
+            sizes="(min-width: 768px) 30rem, 100vw"
+            alt=""
+            loading="lazy"
+            data-detalle-foto
+          />
+          <span
+            class="etiqueta absolute top-4 left-4"
+            hidden
+            data-detalle-etiqueta
+          ></span>
+        </figure>
+        <div class="detalle-cuerpo" data-detalle-cuerpo>
+          <button
+            type="button"
+            class="detalle-cerrar"
+            aria-label="Cerrar"
+            data-cerrar-detalle
+          >
+            <svg
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
+          <h2
+            id="detalle-nombre"
+            class="display text-[clamp(2rem,4vw,2.75rem)] leading-[1.05] text-carbon pr-12"
+            data-detalle-nombre
+          ></h2>
+          <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+            <p
+              class="font-bold text-carbon-suave marcador"
+              data-detalle-origen
+            ></p>
+            <p class="precio text-[1.75rem]">
+              <span class="sr-only">Precio: </span
+              ><span data-detalle-precio></span>
+            </p>
+          </div>
+          <p
+            class="mt-5 text-[1.1rem] leading-relaxed text-carbon"
+            data-detalle-descripcion
+          ></p>
+          <h3
+            class="mt-7 text-[0.8rem] font-extrabold uppercase tracking-[0.1em] text-aji"
+          >
+            Su historia
+          </h3>
+          <p
+            class="mt-2 text-[1.02rem] leading-relaxed text-carbon-suave"
+            data-detalle-historia
+          ></p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#reservas" class="btn btn-primario" data-detalle-reservar
+              >Reservar mesa</a
+            >
+            <button type="button" class="btn btn-linea" data-cerrar-detalle>
+              Volver a la carta
+            </button>
+          </div>
+          <p class="mt-5 text-[0.82rem] text-carbon-suave">
+            Foto ilustrativa. Carta y precios de demostración.
+          </p>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Panel "Mis reservas" (js/ui/mis-reservas.js) -->
+    <dialog
+      id="mis-reservas"
+      class="panel-reservas"
+      aria-labelledby="mis-reservas-titulo"
+      data-mis-reservas
+    >
+      <div class="panel-reservas-hoja">
+        <header class="panel-reservas-cabeza">
+          <div>
+            <h2 id="mis-reservas-titulo" class="display text-[2rem] leading-none">
+              Mis reservas
+            </h2>
+            <p class="mt-2 text-[0.95rem] text-carbon-suave">
+              Guardadas en este navegador. Puedes cambiarlas o cancelarlas
+              hasta 3 horas antes de llegar.
+            </p>
+          </div>
+          <button
+            type="button"
+            class="detalle-cerrar"
+            aria-label="Cerrar Mis reservas"
+            data-cerrar-mis-reservas
+          >
+            <svg
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </header>
+        <div class="panel-reservas-cuerpo" data-mis-reservas-lista></div>
+        <footer
+          class="panel-reservas-pie"
+          data-texto-api="Reservas hechas o consultadas desde este navegador. Restaurante ficticio: proyecto de portafolio."
+        >
+          Datos de demostración: se guardan solo en este navegador y no llegan
+          a ningún restaurante.
+        </footer>
+      </div>
+    </dialog>
+
+    <svg width="0" height="0" class="absolute" aria-hidden="true">
+      <symbol id="marca" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="20" fill="#8F211E" />
+        <circle
+          cx="20"
+          cy="20"
+          r="16.5"
+          fill="none"
+          stroke="#E0AA2F"
+          stroke-width="1.5"
+        />
+        <path
+          d="M11 28.5c4.4-1.1 8.4-3.9 11.3-7.8 2.3-3.1 4-6.4 7.2-9.2"
+          fill="none"
+          stroke="#F6E7CF"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <g fill="#F6E7CF">
+          <ellipse
+            cx="14.3"
+            cy="25.6"
+            rx="2.6"
+            ry="1.1"
+            transform="rotate(-60 14.3 25.6)"
+          />
+          <ellipse
+            cx="17.4"
+            cy="28"
+            rx="2.6"
+            ry="1.1"
+            transform="rotate(-10 17.4 28)"
+          />
+          <ellipse
+            cx="18.4"
+            cy="22.3"
+            rx="2.6"
+            ry="1.1"
+            transform="rotate(-62 18.4 22.3)"
+          />
+          <ellipse
+            cx="21.8"
+            cy="24.6"
+            rx="2.6"
+            ry="1.1"
+            transform="rotate(-12 21.8 24.6)"
+          />
+          <ellipse
+            cx="22.3"
+            cy="18"
+            rx="2.6"
+            ry="1.1"
+            transform="rotate(-64 22.3 18)"
+          />
+          <ellipse
+            cx="25.6"
+            cy="20.2"
+            rx="2.6"
+            ry="1.1"
+            transform="rotate(-14 25.6 20.2)"
+          />
+          <ellipse
+            cx="25.8"
+            cy="13.6"
+            rx="2.6"
+            ry="1.1"
+            transform="rotate(-66 25.8 13.6)"
+          />
+          <ellipse
+            cx="29"
+            cy="15.8"
+            rx="2.6"
+            ry="1.1"
+            transform="rotate(-16 29 15.8)"
+          />
+        </g>
+        <circle cx="29.5" cy="11.5" r="1.9" fill="#E0AA2F" />
+      </symbol>
+    </svg>
+  </body>
+</html>

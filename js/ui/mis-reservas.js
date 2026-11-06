@@ -156,7 +156,7 @@ export function iniciarMisReservas(servicio, reserva) {
         h('strong', {}, 'Cambios y cancelación: '), `hasta el ${limiteDeCambios(r)}.`)
       : h('p', { class: 'boleto-plazo vencido' },
         h('strong', {}, 'Plazo de cambios vencido '), `(era hasta el ${limiteDeCambios(r)}). `,
-        'Para cambiarla, llámanos al ', h('a', { href: RESTAURANTE.telefonoHref, class: 'underline font-bold' }, RESTAURANTE.telefono), ' (demo).');
+        'Para cambiarla, llámanos al ', h('strong', {}, RESTAURANTE.telefono), ' (demo).');
 
     const pendiente = r.estado === 'pendiente'
       ? h('p', { class: 'mt-3 text-[0.9rem] text-carbon-suave' }, servicio.esDemo

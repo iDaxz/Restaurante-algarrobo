@@ -1606,7 +1606,8 @@ body[data-menu-abierto] .cabecera { background: var(--color-marfil-luz); border-
    Una escena con proporción fija (como un afiche) donde todo se mide en cqw, así se escala entera.
    Banda diagonal carbón, título condensado (Archivo al 62 % de ancho), dos platos y dos bebidas
    recortados con su texto. Las posiciones de cada pieza viven en variables y cambian en móvil. */
-.flyer { background: var(--color-marfil); }
+.flyer { background: var(--color-aji) radial-gradient(120% 90% at 85% 0%, rgb(255 255 255 / 0.07), transparent 60%); }
+.flyer-escena { border-color: rgb(33 30 26 / 0.35); }
 .flyer-marco { position: relative; container-type: inline-size; }
 .flyer-escena {
   position: relative;
@@ -1674,7 +1675,8 @@ body[data-menu-abierto] .cabecera { background: var(--color-marfil-luz); border-
 .flyer-sellos li { display: grid; align-content: start; gap: 0.2cqw; }
 .flyer-sello-cifra { font-family: var(--font-sans); font-stretch: 62%; font-weight: 800; font-size: max(1.8rem, 3.6cqw); line-height: 0.9; text-transform: uppercase; color: var(--color-aji); }
 .flyer-sello-texto { max-width: 9.5cqw; font-size: max(0.75rem, 0.95cqw); font-weight: 700; line-height: 1.3; color: var(--color-carbon-suave); }
-.flyer-horario { font-size: max(0.78rem, 1cqw); font-weight: 700; color: var(--color-carbon-suave); }
+.flyer-horario { display: inline-flex; align-items: baseline; gap: 0.5em; padding: 0.4em 0.85em; border-radius: 12px; line-height: 1.35; background: var(--color-carbon); color: var(--color-marfil); font-size: max(0.82rem, 1.05cqw); font-weight: 700; }
+.flyer-horario::before { content: ""; flex: none; width: 0.55em; height: 0.55em; translate: 0 -0.05em; border-radius: 50%; background: var(--color-maiz); }
 .flyer-acciones { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.6rem; margin-top: 0.4cqw; }
 
 /* Móvil y tablet: el afiche se vuelve vertical, como la referencia. Los textos van derechos en los
@@ -1708,6 +1710,15 @@ body[data-menu-abierto] .cabecera { background: var(--color-marfil-luz); border-
   .flyer-sello-texto { max-width: none; font-size: 0.8rem; }
   .flyer-horario { font-size: 0.85rem; }
   .flyer-acciones { justify-content: flex-start; margin-top: 0.5rem; }
+  /* Fuera del afiche el pie queda sobre el rojo ají: textos claros y botón en maíz */
+  .flyer-lugar, .flyer-lugar strong { color: var(--color-marfil); }
+  .flyer-sellos { border-bottom-color: rgb(246 231 207 / 0.5); }
+  .flyer-sello-cifra { color: var(--color-maiz); }
+  .flyer-sello-texto { color: rgb(246 231 207 / 0.88); }
+  .flyer-pie .btn-primario { background: var(--color-maiz); color: var(--color-carbon); }
+  .flyer-pie .btn-primario:hover { background: var(--color-maiz-claro); }
+  .flyer-pie .btn-linea { color: var(--color-marfil); border-color: var(--color-marfil); }
+  .flyer-pie .btn-linea:hover { background: var(--color-marfil); color: var(--color-carbon); }
 }
 @media (min-width: 640px) and (max-width: 1023px) {
   .flyer-marco { display: grid; grid-template-columns: minmax(0, 25rem) minmax(0, 1fr); align-items: end; gap: 2.5rem; }

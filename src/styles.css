@@ -1268,10 +1268,10 @@ body[data-menu-abierto] .cabecera { background: var(--color-marfil-luz); border-
   white-space: nowrap;
   transition: background-color 200ms var(--ease-salida), color 200ms, padding 260ms var(--ease-salida);
 }
-.filtro-carta-cuenta { font-size: 0.78rem; font-weight: 800; color: var(--color-aji); font-variant-numeric: tabular-nums; }
+.filtro-carta-cuenta { min-width: 1.7rem; padding: 0.1rem 0.45rem; border-radius: 999px; background: var(--color-maiz); color: var(--color-carbon); font-size: 0.74rem; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums; }
 .filtro-carta:hover { background: var(--color-marfil-luz); }
-.filtro-carta[aria-pressed="true"] { background: var(--color-carbon); color: var(--color-marfil); }
-.filtro-carta[aria-pressed="true"] .filtro-carta-cuenta { color: var(--color-maiz); }
+.filtro-carta[aria-pressed="true"] { background: var(--color-aji); color: var(--color-blanco); }
+.filtro-carta[aria-pressed="true"] .filtro-carta-cuenta { background: var(--color-marfil); color: var(--color-aji); }
 .filtro-carta:focus-visible { outline: 3px solid var(--color-aji); outline-offset: 2px; }
 @media (min-width: 1024px) {
   .filtros-carta { display: grid; gap: 0; padding: 0; border-top: 2px solid var(--color-carbon); }
@@ -1284,7 +1284,7 @@ body[data-menu-abierto] .cabecera { background: var(--color-marfil-luz); border-
     font-size: 1.05rem;
   }
   .filtro-carta:hover { background: transparent; color: var(--color-aji); padding-left: 0.6rem; }
-  .filtro-carta[aria-pressed="true"] { background: var(--color-carbon); color: var(--color-marfil); border-radius: 12px; padding-inline: 0.9rem; border-bottom-color: transparent; }
+  .filtro-carta[aria-pressed="true"] { background: var(--color-aji); color: var(--color-blanco); border-radius: 12px; padding-inline: 0.9rem; border-bottom-color: transparent; }
 }
 
 .carta-solo-hoy { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 2.75rem; font-weight: 700; color: var(--color-carbon); cursor: pointer; }
@@ -1354,9 +1354,9 @@ body[data-menu-abierto] .cabecera { background: var(--color-marfil-luz); border-
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(to top, rgb(33 30 26 / 0.95) 0%, rgb(33 30 26 / 0.82) 38%, rgb(33 30 26 / 0) 72%);
+  background: linear-gradient(to top, rgb(33 30 26 / 0.95) 0%, rgb(33 30 26 / 0.8) 32%, rgb(33 30 26 / 0.35) 52%, rgb(33 30 26 / 0) 66%);
 }
-.carta-card--especial::before { background: linear-gradient(to top, rgb(111 24 22 / 0.97) 0%, rgb(143 33 30 / 0.86) 40%, rgb(143 33 30 / 0) 74%); }
+.carta-card--especial::before { background: linear-gradient(to top, rgb(111 24 22 / 0.97) 0%, rgb(143 33 30 / 0.82) 30%, rgb(143 33 30 / 0.3) 48%, rgb(143 33 30 / 0) 62%); }
 .carta-card--especial { box-shadow: 0 0 0 3px var(--color-aji), 0 18px 32px -20px rgb(33 30 26 / 0.55); }
 .carta-card-foto { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; transition: transform 700ms var(--ease-salida); }
 .carta-card.agotado .carta-card-foto { filter: grayscale(0.75); }

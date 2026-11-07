@@ -64,7 +64,7 @@
           <aside class="legal-aviso" aria-label="Importante">
             <p class="legal-aviso-titulo">Antes de reservar</p>
             <p>
-              Ninguna reserva hecha aquí te guarda una mesa de verdad: nadie te va a esperar ni a llamar.
+              Las reservas sí se guardan en la base de datos del proyecto, pero no te guardan una mesa de verdad: nadie te va a esperar ni a llamar.
               Para probar el sistema usa datos inventados; no escribas tu nombre completo, tu correo ni tu
               teléfono reales.
             </p>
@@ -107,19 +107,20 @@
               nadie.
             </p>
             <h3>Dónde se guardan</h3>
-            <p>Depende de cómo esté funcionando la web en ese momento:</p>
-            <ul>
-              <li>
-                <strong>Modo demostración</strong> (cuando no hay servidor): la reserva se guarda solo en tu
-                navegador y no sale de tu dispositivo.
-              </li>
-              <li>
-                <strong>Con servidor</strong> (la versión publicada): la reserva se guarda en una base de datos
-                PostgreSQL alojada en Neon (Estados Unidos), a la que se accede a través de una API alojada en
-                Render. La web se sirve desde Vercel. Solo la persona que administra el proyecto puede ver
-                esas reservas, desde un panel con contraseña.
-              </li>
-            </ul>
+            <p>
+              <strong>En esta web publicada, las reservas se guardan en una base de datos.</strong> Al confirmar,
+              el formulario envía tus datos a la API del proyecto (alojada en Render), y la API los guarda en una
+              base de datos PostgreSQL alojada en Neon, en Estados Unidos. La web en sí se sirve desde Vercel.
+            </p>
+            <p>
+              Esas reservas solo las ve la persona que administra el proyecto, desde un panel protegido con
+              contraseña, para confirmarlas, cambiarlas o cancelarlas como lo haría el personal de un restaurante.
+              En tu navegador queda solo el código y el contacto de tus reservas, para mostrarlas en «Mis reservas».
+            </p>
+            <p>
+              Si la API no responde, la web pasa a un <strong>modo demostración</strong>: entonces la reserva se
+              guarda únicamente en tu navegador, no llega a la base de datos y la página te lo indica.
+            </p>
             <h3>Cuánto tiempo</h3>
             <p>
               Pasados 12 meses desde la fecha de la reserva, el sistema borra solo el nombre, el contacto y los
@@ -155,14 +156,19 @@
                 </thead>
                 <tbody>
                   <tr>
+                    <td><code>algarrobo.mis-reservas-api.v1</code></td>
+                    <td>Almacenamiento local</td>
+                    <td>Recordar el código y el contacto de las reservas hechas o consultadas desde este navegador, para listarlas en «Mis reservas». La reserva en sí está en la base de datos.</td>
+                  </tr>
+                  <tr>
                     <td><code>algarrobo.reservas.v1</code></td>
                     <td>Almacenamiento local</td>
-                    <td>Recordar las reservas hechas o consultadas desde este navegador («Mis reservas»).</td>
+                    <td>Solo en modo demostración: guardar las reservas completas en este navegador.</td>
                   </tr>
                   <tr>
                     <td><code>algarrobo.retenciones.v1</code></td>
                     <td>Almacenamiento local</td>
-                    <td>Apartar la mesa unos minutos mientras completas tus datos (modo demostración).</td>
+                    <td>Solo en modo demostración: apartar la mesa unos minutos mientras completas tus datos.</td>
                   </tr>
                   <tr>
                     <td>Cookie de sesión del panel</td>

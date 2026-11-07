@@ -16,7 +16,7 @@ FROM eclipse-temurin:21-jre
 WORKDIR /app
 RUN useradd --system --uid 10001 algarrobo
 COPY --from=compilar /src/backend/target/*.jar app.jar
-COPY index.html admin.html sitio/
+COPY index.html admin.html legal.html sitio/
 COPY js sitio/js
 COPY assets sitio/assets
 ENV ALGARROBO_SITIO=/app/sitio/ \

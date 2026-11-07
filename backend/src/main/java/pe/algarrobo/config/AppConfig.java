@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * Reloj (inyectable para las pruebas), tareas programadas y la página pública.
- * Solo se publican index.html, admin.html, js/ y assets/ de la carpeta del sitio: el resto (backend/, docs/,
+ * Solo se publican index.html, admin.html, legal.html, js/ y assets/ de la carpeta del sitio: el resto (backend/, docs/,
  * node_modules/, credenciales) nunca se sirve.
  */
 @Configuration
@@ -33,7 +33,7 @@ public class AppConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registro) {
-        registro.addResourceHandler("/index.html", "/admin.html").addResourceLocations(carpetaSitio);
+        registro.addResourceHandler("/index.html", "/admin.html", "/legal.html").addResourceLocations(carpetaSitio);
         registro.addResourceHandler("/js/**").addResourceLocations(carpetaSitio + "js/");
         registro.addResourceHandler("/assets/**").addResourceLocations(carpetaSitio + "assets/");
     }

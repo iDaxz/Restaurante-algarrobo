@@ -2,6 +2,7 @@
 
 @source "../index.html";
 @source "../admin.html";
+@source "../legal.html";
 @source "../js";
 
 /* ---------- Fuentes servidas desde el proyecto ---------- */
@@ -1859,3 +1860,35 @@ body[data-menu-abierto] .cabecera { background: var(--color-marfil-luz); border-
 .plano-piso:focus-visible, .plano-mesa:focus-visible { outline-color: #5a3f2b; }
 /* En los teléfonos más angostos el plano es aún más alto: las mesas (44 px) no alcanzan a los nombres de zona */
 @media (max-width: 379px) { .plano-lienzo { aspect-ratio: 100 / 150; } }
+
+/* ---------- Aviso legal y privacidad (legal.html) ---------- */
+.legal-cabeza { background: var(--color-aji); color: var(--color-marfil); }
+.legal-antetitulo { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-maiz-claro, #f2c661); }
+.legal-titulo { margin-top: 0.5rem; font-size: clamp(2.3rem, 6vw, 4rem); line-height: 1; color: var(--color-blanco); text-wrap: balance; }
+.legal-entrada { margin-top: 1.1rem; max-width: 42rem; font-size: 1.08rem; line-height: 1.6; }
+.legal-fecha { margin-top: 1rem; font-size: 0.85rem; font-weight: 700; color: var(--color-marfil); }
+.legal-rejilla { display: grid; gap: 2rem; }
+@media (min-width: 900px) { .legal-rejilla { grid-template-columns: 14rem minmax(0, 1fr); gap: 3.5rem; align-items: start; } .legal-indice { position: sticky; top: 1.5rem; } }
+.legal-indice { padding: 1.1rem 1.2rem; border-radius: 14px; background: var(--color-marfil-luz); border: 1px solid var(--color-borde); }
+.legal-indice-titulo { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-aji); }
+.legal-indice ol { margin-top: 0.6rem; display: grid; gap: 0.15rem; counter-reset: indice; }
+.legal-indice li { counter-increment: indice; }
+.legal-indice a { display: flex; gap: 0.55rem; padding: 0.35rem 0; font-weight: 700; color: var(--color-carbon); text-decoration: none; }
+.legal-indice a::before { content: counter(indice); flex: none; align-self: flex-start; width: 1.4rem; height: 1.4rem; text-align: center; border-radius: 999px; background: var(--color-maiz); font-size: 0.75rem; line-height: 1.4rem; font-weight: 800; }
+.legal-indice a:hover { color: var(--color-aji); }
+.legal-texto { max-width: 46rem; display: grid; gap: 2.75rem; line-height: 1.65; }
+.legal-texto section { display: grid; gap: 0.85rem; scroll-margin-top: 1.5rem; }
+.legal-texto h2 { font-size: clamp(1.6rem, 3vw, 2rem); color: var(--color-aji); line-height: 1.15; }
+.legal-texto h3 { margin-top: 0.4rem; font-size: 1.05rem; font-weight: 800; color: var(--color-carbon); }
+.legal-texto ul { display: grid; gap: 0.45rem; padding-left: 1.2rem; list-style: disc; }
+.legal-texto li::marker { color: var(--color-terracota); }
+.legal-texto a { color: var(--color-aji); font-weight: 700; text-decoration: underline; text-underline-offset: 0.15em; }
+.legal-texto a:focus-visible, .legal-indice a:focus-visible { outline: 3px solid var(--color-aji); outline-offset: 2px; border-radius: 4px; }
+.legal-texto code { font-family: inherit; font-size: 0.9em; font-weight: 700; padding: 0.05rem 0.35rem; border-radius: 5px; background: var(--color-marfil-luz); overflow-wrap: anywhere; }
+.legal-aviso { padding: 1.2rem 1.35rem; border-radius: 14px; background: var(--color-carbon); color: var(--color-marfil); border-left: 6px solid var(--color-maiz); }
+.legal-aviso-titulo { font-weight: 800; color: var(--color-maiz); margin-bottom: 0.3rem; }
+.legal-tabla { overflow-x: auto; border-radius: 12px; border: 1px solid var(--color-borde); background: var(--color-blanco); }
+.legal-tabla:focus-visible { outline: 3px solid var(--color-aji); outline-offset: 2px; }
+.legal-tabla table { width: 100%; min-width: 34rem; border-collapse: collapse; font-size: 0.92rem; }
+.legal-tabla th { text-align: left; padding: 0.7rem 0.9rem; background: var(--color-carbon); color: var(--color-marfil); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.legal-tabla td { padding: 0.75rem 0.9rem; border-top: 1px solid var(--color-borde); vertical-align: top; }

@@ -1883,11 +1883,5 @@ body[data-menu-abierto] .cabecera { background: var(--color-marfil-luz); border-
 .legal-texto li::marker { color: var(--color-terracota); }
 .legal-texto a { color: var(--color-aji); font-weight: 700; text-decoration: underline; text-underline-offset: 0.15em; }
 .legal-texto a:focus-visible, .legal-indice a:focus-visible { outline: 3px solid var(--color-aji); outline-offset: 2px; border-radius: 4px; }
-.legal-texto code { font-family: inherit; font-size: 0.9em; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 6px; background: var(--color-marfil-luz); overflow-wrap: anywhere; }
 .legal-aviso { padding: 1.2rem 1.35rem; border-radius: 14px; background: var(--color-carbon); color: var(--color-marfil); }
 .legal-aviso-titulo { font-weight: 800; color: var(--color-maiz); margin-bottom: 0.3rem; }
-.legal-tabla { overflow-x: auto; border-radius: 12px; border: 1px solid var(--color-borde); background: var(--color-blanco); }
-.legal-tabla:focus-visible { outline: 3px solid var(--color-aji); outline-offset: 2px; }
-.legal-tabla table { width: 100%; min-width: 34rem; border-collapse: collapse; font-size: 0.92rem; }
-.legal-tabla th { text-align: left; padding: 0.7rem 0.9rem; background: var(--color-carbon); color: var(--color-marfil); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.legal-tabla td { padding: 0.75rem 0.9rem; border-top: 1px solid var(--color-borde); vertical-align: top; }

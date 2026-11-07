@@ -64,7 +64,7 @@
           <aside class="legal-aviso" aria-label="Importante">
             <p class="legal-aviso-titulo">Antes de reservar</p>
             <p>
-              Las reservas sí se guardan en la base de datos del proyecto, pero no te guardan una mesa de verdad: nadie te va a esperar ni a llamar.
+              Las reservas se guardan en el sistema, pero no te guardan una mesa de verdad: nadie te va a esperar ni a llamar.
               Para probar el sistema usa datos inventados; no escribas tu nombre completo, tu correo ni tu
               teléfono reales.
             </p>
@@ -108,18 +108,13 @@
             </p>
             <h3>Dónde se guardan</h3>
             <p>
-              <strong>En esta web publicada, las reservas se guardan en una base de datos.</strong> Al confirmar,
-              el formulario envía tus datos a la API del proyecto (alojada en Render), y la API los guarda en una
-              base de datos PostgreSQL alojada en Neon, en Estados Unidos. La web en sí se sirve desde Vercel.
+              Las reservas se guardan en la base de datos del proyecto, en servidores fuera del Perú. Solo las ve
+              la persona que administra el proyecto, desde un panel con contraseña. En tu navegador queda el código
+              de tus reservas, para mostrarlas en «Mis reservas».
             </p>
             <p>
-              Esas reservas solo las ve la persona que administra el proyecto, desde un panel protegido con
-              contraseña, para confirmarlas, cambiarlas o cancelarlas como lo haría el personal de un restaurante.
-              En tu navegador queda solo el código y el contacto de tus reservas, para mostrarlas en «Mis reservas».
-            </p>
-            <p>
-              Si la API no responde, la web pasa a un <strong>modo demostración</strong>: entonces la reserva se
-              guarda únicamente en tu navegador, no llega a la base de datos y la página te lo indica.
+              Si en algún momento el servidor no responde, la web funciona en modo demostración: la reserva se
+              queda solo en tu navegador y la página te lo avisa.
             </p>
             <h3>Cuánto tiempo</h3>
             <p>
@@ -131,11 +126,6 @@
             <ul>
               <li>No se envían correos ni mensajes: los avisos de confirmación son simulados.</li>
               <li>No hay analítica, publicidad ni rastreadores de terceros.</li>
-              <li>
-                La dirección IP solo se usa un momento para limitar los envíos repetidos (protección contra
-                abusos) y no se guarda en la base de datos. Los proveedores de alojamiento pueden registrarla en
-                sus propios registros técnicos.
-              </li>
             </ul>
             <h3>Tus derechos</h3>
             <p>
@@ -148,37 +138,11 @@
 
           <section id="almacenamiento" aria-labelledby="t-almacenamiento">
             <h2 id="t-almacenamiento" class="display">3. Cookies y almacenamiento</h2>
-            <p>La web no usa cookies de publicidad ni de analítica. Solo guarda lo necesario para funcionar:</p>
-            <div class="legal-tabla" role="region" aria-label="Lo que se guarda en tu navegador" tabindex="0">
-              <table>
-                <thead>
-                  <tr><th scope="col">Nombre</th><th scope="col">Tipo</th><th scope="col">Para qué</th></tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><code>algarrobo.mis-reservas-api.v1</code></td>
-                    <td>Almacenamiento local</td>
-                    <td>Recordar el código y el contacto de las reservas hechas o consultadas desde este navegador, para listarlas en «Mis reservas». La reserva en sí está en la base de datos.</td>
-                  </tr>
-                  <tr>
-                    <td><code>algarrobo.reservas.v1</code></td>
-                    <td>Almacenamiento local</td>
-                    <td>Solo en modo demostración: guardar las reservas completas en este navegador.</td>
-                  </tr>
-                  <tr>
-                    <td><code>algarrobo.retenciones.v1</code></td>
-                    <td>Almacenamiento local</td>
-                    <td>Solo en modo demostración: apartar la mesa unos minutos mientras completas tus datos.</td>
-                  </tr>
-                  <tr>
-                    <td>Cookie de sesión del panel</td>
-                    <td>Cookie técnica</td>
-                    <td>Solo para el personal que entra al panel: mantiene la sesión y protege los formularios. Se borra al cerrar sesión.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p>Puedes borrar todo esto cuando quieras desde la configuración de tu navegador.</p>
+            <p>
+              La web no usa cookies de publicidad ni de analítica. Solo guarda en tu navegador lo necesario para que
+              «Mis reservas» funcione, y una cookie de sesión para quienes entran al panel del personal. Puedes
+              borrarlo cuando quieras desde la configuración de tu navegador.
+            </p>
           </section>
 
           <section id="contenidos" aria-labelledby="t-contenidos">

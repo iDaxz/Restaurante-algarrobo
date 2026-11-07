@@ -53,6 +53,15 @@
         ],
         "createdAt": "2026-10-28T01:43:46.203Z",
         "reason": "Marfil (#FBF3E6 / #F6E7CF) es el color de marca definido en DESIGN.md; el panel comparte la paleta del sitio."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "legal.html"
+        ],
+        "createdAt": "2026-11-07T17:47:27.653Z",
+        "reason": "Claude verified: legal-cabeza inner div has px-4/py-12 and legal-tabla cells have 0.7-0.9rem padding; detector reads the wrappers only"
       }
     ]
   }
